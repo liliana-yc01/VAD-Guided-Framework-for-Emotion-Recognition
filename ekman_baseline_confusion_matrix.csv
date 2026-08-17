@@ -1,0 +1,7 @@
+,pred_angry,pred_afraid,pred_disgusted,pred_joyful,pred_sad,pred_surprised
+true_angry,1568,42,51,10,230,39
+true_afraid,12,1722,32,55,65,54
+true_disgusted,224,50,1560,10,59,37
+true_joyful,6,6,0,1905,4,19
+true_sad,72,39,15,31,1768,15
+true_surprised,34,38,9,690,60,1109
