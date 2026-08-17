@@ -1,0 +1,795 @@
+Situation,emotion,empathetic_dialogues,baseline_prediction,baseline_raw_output,theory_prediction,theory_raw_output,theory_estimated_vec,theory_true_vad_error,baseline_correct,theory_correct
+"My car broke down yesterday and they say it might be the transmission. If so, I'd need a new car and that's hard to do right now",afraid,"Customer :Well, I'd have to dip into savings to finance a new car...but that's rough right now when I'm moving apartments
+Agent :",afraid,afraid,sad,"REASONING: The situation is negative and involves a practical/financial problem, but there is no clear person to blame and no immediate threat; the tone is more resigned and worried than actively angry or fearful. This points toward low-to-moderate arousal and low control, consistent with sadness.
+
+VAD_Estimate: [V: -0.55, A: -0.10, D: -0.35]
+EMOTION: sad",[-0.55 -0.1  -0.35],0.7102816342831905,True,False
+"i want to move to new york , buy its all new to me there",afraid,"Customer :I want to evertually move to new york and be closer to my brother and friend , im just a bit afraid as i really dont know much about anything there
+Agent :",afraid,afraid,joyful,"REASONING: The speaker expresses a desire to move somewhere new, which suggests positive anticipation and excitement rather than fear or sadness. The novelty is framed as part of the appeal, not as a threat.
+VAD_Estimate: [V: +0.70, A: +0.50, D: +0.35]
+EMOTION: joyful",[0.7  0.5  0.35],1.5537052487521563,True,False
+I was waiting in front of a store one day when a man approached me and whispered something scary in my ear. I was not pleased.,afraid,"Customer :I was waiting when some guy whispered something scary in my ear. I was a bit shaken.
+Agent :",afraid,afraid,angry,"REASONING: The speaker attributes the unpleasant experience to a specific person’s intrusive actions and describes the reaction as “not pleased,” reflecting irritation and assertive displeasure rather than helpless terror. This points to high negative valence, moderately high arousal, and moderate dominance/control.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.6383572667401852,True,False
+I think my boyfriend is cheating on me,afraid,"Customer :That's terrible. Have you confronted him about it?
+Agent :",afraid,afraid,angry,"REASONING: Suspecting a partner of cheating is a negative interpersonal betrayal, causing high arousal irritation and blame directed at a specific person, which aligns with anger rather than fear or sadness.
+VAD_Estimate: [V: -0.60, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.6   0.55  0.2 ],0.6332456079595026,True,False
+the braves are really good. i just dont know if we have the pitching to make a run,afraid,"Customer :at least you guys have votto!
+Agent :",afraid,afraid,sad,"REASONING: The speaker is worried and uncertain about the team’s chances, expressing low-key doubt rather than excitement or anger. This creates a mild negative mood with low energy and a sense of helplessness about the outcome.
+VAD_Estimate: [V: -0.35, A: -0.15, D: -0.30]
+EMOTION: sad",[-0.35 -0.15 -0.3 ],0.8145550932871269,True,False
+"i want to move to new york , buy its all new to me there",afraid,"Customer :Moving to a new place can make you uneasy, but once you make a couple of friends you'll get over it. 
+Agent :",afraid,afraid,joyful,"REASONING: The speaker expresses a desire to move to New York and seems drawn to the newness of the experience, suggesting positive anticipation and excitement rather than dread. The novelty slightly lowers dominance due to uncertainty, but the overall tone is hopeful and forward-looking.
+VAD_Estimate: [V: +0.55, A: +0.45, D: +0.10]
+EMOTION: joyful",[0.55 0.45 0.1 ],1.3112970677920393,True,False
+I don't think I'm going to do so well this semester.,afraid,"Customer :Why and what did happen?
+Agent :",afraid,afraid,sad,"REASONING: The statement conveys pessimism and resignation about academic performance, with low energy and a sense of low control rather than active frustration or panic. This aligns with sadness.
+VAD_Estimate: [V: -0.50, A: -0.30, D: -0.40]
+EMOTION: sad",[-0.5 -0.3 -0.4],0.9113177272499421,True,False
+My friend got into accident last month. His leg might  be removed!!,afraid,"Customer :That is too bad. Are they okay?
+Agent :",afraid,afraid,sad,"REASONING: The news is severely negative and involves helpless concern for a loved one’s possible permanent injury, producing sorrowful distress and a low sense of control.
+VAD_Estimate: [V: -0.80, A: +0.55, D: -0.45]
+EMOTION: sad",[-0.8   0.55 -0.45],0.16881943016134135,True,False
+There have been so many crimes near me lately. It is getting out of hand,afraid,"Customer :We are hoping too soon!
+Agent :",afraid,afraid,angry,"REASONING: The speaker is expressing frustration about rising crime in their area, which is unpleasant and agitating. The phrase “getting out of hand” suggests active irritation and a complaint about the situation rather than passive sadness or overpowering fear, so valence is negative, arousal is high, and dominance is moderately assertive.
+VAD_Estimate: [V: -0.60, A: +0.60, D: +0.20]
+EMOTION: angry",[-0.6  0.6  0.2],0.6312685640834652,True,False
+My car started to make loud noises coming out of engine. It happens while accelerating,afraid,"Customer :Oh no, do you know what's wrong? I hate car problems..
+Agent :",afraid,afraid,angry,"REASONING: The speaker is describing an irritating car problem that disrupts driving; this is a common frustration trigger with no explicit fear or sense of danger. The loud noise creates moderate-to-high arousal, and the reaction is complaint-oriented rather than helpless or anxious, fitting anger more than fear.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.6383572667401852,True,False
+I think a mouse is in my kitchen again.,afraid,"Customer :Really? Why? They're so small.
+Agent :",afraid,afraid,angry,"REASONING: The recurring mouse is a frustrating, irritating nuisance rather than a life-threatening danger, producing negative valence, moderate arousal, and a sense that the speaker can handle or complain about the problem.
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.20]
+EMOTION: angry",[-0.55  0.5   0.2 ],0.6442049363362563,True,False
+I hit my head on the door corner and it left me with a wound. I feel it will scar,afraid,"Customer :That's terrible! Is it a festering wound that will turn you into a zombie?
+Agent :",afraid,afraid,sad,"REASONING: The accidental injury and the thought of a lasting scar create unpleasantness and a passive, resigned sense of regret. There is no active blame or immediate threat, so the feeling aligns more with sadness than anger or fear.  
+VAD_Estimate: [V: -0.55, A: -0.20, D: -0.35]  
+EMOTION: sad",[-0.55 -0.2  -0.35],0.8090117428072352,True,False
+I keep hearing things in my kitchen. I think the mouse is back.,afraid,"Customer :going to have to do something...call somebody to help you.
+Agent :",afraid,afraid,angry,"REASONING: The mouse is a recurring nuisance, not a life-threatening danger, and the tone suggests irritation/frustration rather than fear or sadness. This is a mildly negative, moderately arousing, slightly assertive reaction.
+VAD_Estimate: [V: -0.45, A: +0.50, D: +0.15]
+EMOTION: angry",[-0.45  0.5   0.15],0.618465843842649,True,False
+I really do no like worms.,afraid,"Customer :Worms? yuck!
+Agent :",afraid,afraid,angry,"REASONING: The statement conveys a clear negative reaction of dislike/irritation toward a specific object, with “really” adding intensity and an assertive tone rather than helplessness or vulnerability. This best matches anger, not fear or sadness.  
+VAD_Estimate: [V: -0.60, A: +0.50, D: +0.20]  
+EMOTION: angry",[-0.6  0.5  0.2],0.6391400472509918,True,False
+I am old.  I am seperated from my wife.  I live far from my children.  For pragmatoic reasons I am the one that can file for divorce.  I do not want to die alone.,afraid,"Customer :Thinking like that seems stressful
+Agent :",afraid,afraid,sad,"REASONING: The situation expresses loneliness, isolation, and resignation about aging and separation, with a passive, melancholy tone rather than high-energy anger or immediate fear. The affect is clearly unpleasant, low-arousal, and marked by low control/vulnerability, matching sadness.
+
+VAD_Estimate: [V: -0.70, A: -0.30, D: -0.40]
+EMOTION: sad",[-0.7 -0.3 -0.4],0.9024965373894793,True,False
+I keep hearing things in my kitchen. I think the mouse is back.,afraid,"Customer :I'm too afraid to go in there. Luckily I have a door to the kitchen. Otherwise I'd just leave the apartment.
+Agent :",afraid,afraid,angry,"REASONING: The situation is unpleasant but not devastating; the repeated sounds and the return of a mouse are a frustrating, non-life-threatening nuisance attributed to a specific cause. This is better captured as irritation/anger than as helpless fear, with moderate negative valence, moderate arousal, and slight assertive control in complaint.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.25]
+EMOTION: angry",[-0.55  0.55  0.25],0.6877499545619759,True,False
+I am old.  I am seperated from my wife.  I live far from my children.  For pragmatoic reasons I am the one that can file for divorce.  I do not want to die alone.,afraid,"Customer :I am old and in good health, but death is around the corner.
+Agent :",afraid,afraid,sad,"REASONING: The situation reflects isolation, loss, and resignation about aging and dying alone, with low energy and a sense of helplessness rather than active anger or panic.
+VAD_Estimate: [V: -0.65, A: -0.30, D: -0.40]
+EMOTION: sad",[-0.65 -0.3  -0.4 ],0.9005553841935541,True,False
+i get this situation in midnight,afraid,"Customer :no real 
+Agent :",afraid,afraid,sad,"REASONING: The text is ambiguous, but the midnight setting and passive phrasing suggest a low-energy, unpleasant late-night realization or rumination rather than active anger or panic. This fits a dejected, low-control sad state.
+
+VAD_Estimate: [V: -0.45, A: -0.30, D: -0.40]
+EMOTION: sad",[-0.45 -0.3  -0.4 ],0.9203260291874831,True,False
+I was waiting in front of a store one day when a man approached me and whispered something scary in my ear. I was not pleased.,afraid,"Customer :oh was he trying to be funny, or was he just creepy?
+Agent :",afraid,afraid,angry,"REASONING: The event is negative and intrusive; the explicit “not pleased” signals irritation and blame toward the man rather than helpless fear. This points to high displeasure, elevated arousal, and some assertive control.
+VAD_Estimate: [V: -0.52, A: +0.58, D: +0.22]
+EMOTION: angry",[-0.52  0.58  0.22],0.6612866246946176,True,False
+I really do no like worms.,afraid,"Customer :I really do like worms.
+Agent :",afraid,afraid,angry,"REASONING: The speaker expresses clear dislike and aversion toward worms, producing negative valence. The word “really” adds mild irritation and activation, and the statement is an assertive complaint rather than helpless fear or passive sadness, so it aligns closest with anger.
+VAD_Estimate: [V: -0.45, A: +0.35, D: +0.15]
+EMOTION: angry",[-0.45  0.35  0.15],0.6595452979136459,True,False
+I don't think I'm going to do so well this semester.,afraid,"Customer :Oh, be positive, try your best.
+Agent :",afraid,afraid,sad,"REASONING: The statement conveys pessimism and resignation about future academic performance, with low energy and a perceived lack of control over the outcome. This aligns more with sadness than with fear or anger.
+VAD_Estimate: [V: -0.55, A: -0.30, D: -0.40]
+EMOTION: sad",[-0.55 -0.3  -0.4 ],0.9049861877399012,True,False
+there have been many instances of attempted abduction in my area. i hate when my wife and son are out without me,afraid,"Customer :yeah tell me about it, bunch of creeps around here
+Agent :",afraid,afraid,angry,"REASONING: The speaker explicitly says ""hate,"" which signals strong displeasure and irritation/anger about the situation. Even though the context involves danger, the explicit emotion word takes precedence and aligns most closely with anger.
+VAD_Estimate: [V: -0.55, A: +0.60, D: +0.25]
+EMOTION: angry",[-0.55  0.6   0.25],0.6859300255857006,True,False
+the braves are really good. i just dont know if we have the pitching to make a run,afraid,"Customer :the braves are really good, i just dont know if we have the pitching to make a run
+Agent :",afraid,afraid,sad,"REASONING: The speaker expresses doubt and concern about the team’s chances, creating a negative, uncertain tone rather than excitement or anger. This feels like low-energy worry/resignation, with little sense of control over the outcome.
+
+VAD_Estimate: [V: -0.35, A: -0.20, D: -0.30]
+EMOTION: sad",[-0.35 -0.2  -0.3 ],0.8608135686662939,True,False
+I am old.  I am seperated from my wife.  I live far from my children.  For pragmatoic reasons I am the one that can file for divorce.  I do not want to die alone.,afraid,"Customer :You shouldn't think about death! Take each day as it comes
+Agent :",afraid,afraid,sad,"REASONING: The situation expresses loneliness, isolation, and resignation about aging and family separation, with a passive longing not to die alone. This is low-energy sorrow and helplessness rather than high-arousal fear or irritation.
+VAD_Estimate: [V: -0.65, A: -0.35, D: -0.45]
+EMOTION: sad",[-0.65 -0.35 -0.45],0.9502631214563679,True,False
+My car started to make loud noises coming out of engine. It happens while accelerating,afraid,"Customer :Recently, i can hear loud noises coming out of my car's engine. It only happens when I accelerate
+Agent :",afraid,afraid,angry,"REASONING: The car issue is unpleasant and frustrating, creating irritation rather than helplessness or life-threatening fear. The mechanical problem is likely annoying and prompts active complaint or problem-solving, indicating moderate arousal and control, closest to anger.
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.20]
+EMOTION: angry",[-0.55  0.5   0.2 ],0.6442049363362563,True,False
+I think a mouse is in my kitchen again.,afraid,"Customer :Oh no! Have you put traps down?
+Agent :",afraid,afraid,angry,"REASONING: The situation describes a recurring nuisance, which triggers irritation and frustration rather than genuine helplessness or life-threatening fear. The mouse is a specific annoyance the speaker can address, so anger fits best with negative valence, moderate arousal, and some sense of control.
+VAD_Estimate: [V: -0.50, A: +0.45, D: +0.20]
+EMOTION: angry",[-0.5   0.45  0.2 ],0.6625707509390978,True,False
+I think a mouse is in my kitchen again.,afraid,"Customer :They are fast and sneaky and I think one is in my kitchen
+Agent :",afraid,afraid,angry,"REASONING: The situation describes an unwanted recurring nuisance, likely causing irritation and annoyance rather than intense fear or sadness. The negative event is not life-threatening, and the speaker seems frustrated with the mouse’s presence.
+VAD_Estimate: [V: -0.50, A: +0.40, D: +0.10]
+EMOTION: angry",[-0.5  0.4  0.1],0.5835237784358064,True,False
+"I have to go rescue a dog from a violent household. This place has a bad history and the cops are always there. This might not end well, but I'll work for it to be fine for the dog's sake.",afraid,"Customer :What type of dog is it?
+Agent :",afraid,afraid,angry,"REASONING: The situation is dangerous and unjust, with clear negative circumstances and high tension, producing negative valence and high arousal. The speaker is actively determined to intervene for the dog’s sake, showing assertive control rather than helplessness, so the closest match is anger.
+VAD_Estimate: [V: -0.55, A: +0.60, D: +0.30]
+EMOTION: angry",[-0.55  0.6   0.3 ],0.7355270219373317,True,False
+I keep hearing things in my kitchen. I think the mouse is back.,afraid,"Customer :I think there is a mouse in my kitchen. I keep hearing squeaking noises at night.
+Agent :",afraid,afraid,angry,"REASONING: The speaker is annoyed and frustrated by a recurring pest in the kitchen, not fearful or sad; this is active irritation with a sense of wanting to deal with the problem.
+VAD_Estimate: [V: -0.45, A: +0.40, D: +0.20]
+EMOTION: angry",[-0.45  0.4   0.2 ],0.687749954561976,True,False
+I think a mouse is in my kitchen again.,afraid,"Customer :I am so scared of mice.
+Agent :",afraid,afraid,angry,"REASONING: The speaker is expressing annoyance and frustration over a recurring, unpleasant situation rather than helplessness or panic. Valence is negative, arousal is moderate from irritation, and dominance is slightly assertive because the speaker is complaining about the problem.  
+VAD_Estimate: [V: -0.55, A: +0.45, D: +0.20]  
+EMOTION: angry",[-0.55  0.45  0.2 ],0.653834841531101,True,False
+I hate wasps so much. They always seem to get into my apartment somehow and I turned into a little girl!,afraid,"Customer :I've been looking into bug sprays and bug repellants but nothing has changed. I think it's time to call the exterminator!
+Agent :",afraid,afraid,angry,"REASONING: The speaker explicitly expresses hatred toward wasps, which signals strong displeasure and irritation rather than a neutral or positive state. The “little girl” comment suggests some helplessness, but the explicit hate and active aversion anchor the emotion as anger.
+VAD_Estimate: [V: -0.60, A: +0.60, D: +0.20]
+EMOTION: angry",[-0.6  0.6  0.2],0.6312685640834652,True,False
+I hated waiting each day to see if a college acceptance letter came in,afraid,"Customer :I was terrified I was not going to get into college, every day I waited for the mail to see if a letter came in
+Agent :",afraid,afraid,angry,"REASONING: The explicit word ""hated"" signals active frustration and irritation with the waiting, giving a negative valence, moderate-to-high arousal, and an assertive, annoyed tone rather than helplessness.
+VAD_Estimate: [V: -0.62, A: +0.52, D: +0.20]
+EMOTION: angry",[-0.62  0.52  0.2 ],0.6353739056650028,True,False
+I hated waiting each day to see if a college acceptance letter came in,afraid,"Customer :Yes but it took about 10 rejection letters for the acceptance to come through
+Agent :",afraid,afraid,angry,"REASONING: The speaker explicitly says they “hated” the daily waiting, indicating active irritation and frustration rather than passive sadness or raw fear. The situation is unpleasant and agitating, with some assertive annoyance despite lack of control over the outcome.
+VAD_Estimate: [V: -0.55, A: +0.60, D: +0.10]
+EMOTION: angry",[-0.55  0.6   0.1 ],0.5375872022286245,True,False
+i get this situation in midnight,afraid,"Customer :Oh that really sucks, hopefully you get that dealt with.
+Agent :",afraid,afraid,sad,"REASONING: No explicit emotion word is present. The phrase is vague, but “midnight” gives a slightly negative, passive, and low-energy tone, with no clear threat, anger target, or positive achievement, so the closest benchmark is sadness.
+VAD_Estimate: [V: -0.25, A: -0.20, D: -0.25]
+EMOTION: sad",[-0.25 -0.2  -0.25],0.9080198235721509,True,False
+Our home was broken in to 2 months after we purchased it.,afraid,"Customer :Yes I have actually. It was scary.
+Agent :",afraid,afraid,angry,"REASONING: The break-in is a clear violation of a newly purchased home, evoking frustration and blame toward the intruder rather than ambiguous or life-threatening fear. This is high displeasure with assertive irritation.
+
+VAD_Estimate: [V: -0.65, A: +0.60, D: +0.25]
+
+EMOTION: angry",[-0.65  0.6   0.25],0.6800735254367721,True,False
+I was driving down the highway and a semi-truck doesn't even look and just merges into my lane.  I had to swerve over and luckily there wasn't a car there.,angry,"Customer :No, luckily I swerved into the outer-most lane and there wasn't a car there. Thank God!
+Agent :",angry,angry,afraid,"REASONING: The sudden, life-threatening near-collision forces the speaker into an immediate survival response of panic and vulnerability, rather than reflective anger. Valence is strongly negative, arousal is high, and dominance is low because the speaker had little control over the truck’s actions.
+VAD_Estimate: [V: -0.70, A: +0.65, D: -0.45]
+EMOTION: afraid",[-0.7   0.65 -0.45],0.7278049189171505,True,False
+when my brother got jumped,angry,"Customer :I remember when we were younger , and my brother came home one of his eyes was swollen shut, and he had a giant gash under his other, he had gotten jumped i almost cried in just anger 
+Agent :",angry,angry,afraid,"REASONING: The speaker describes a violent attack on their brother, which is a serious, uncontrollable threat that would trigger alarm and helplessness rather than confident anger. Valence is strongly negative, arousal is high, and dominance is low due to a lack of control over the dangerous situation.
+VAD_Estimate: [V: -0.70, A: +0.65, D: -0.45]
+EMOTION: afraid",[-0.7   0.65 -0.45],0.7278049189171505,True,False
+My boss embarrassed me infront of the investors.,angry,"Customer :He was making of my hairstyle for no reason. i am angry with him!
+Agent :",angry,angry,afraid,"REASONING: The explicit emotion is “embarrassed,” which involves negative self-focused feelings, moderate-to-high arousal from social exposure, and low dominance from feeling vulnerable and judged. This is closest to the afraid prototype: unpleasant, activated, and low in control.
+VAD_Estimate: [V: -0.55, A: +0.35, D: -0.45]
+EMOTION: afraid",[-0.55  0.35 -0.45],0.7410802925459561,True,False
+Why won't I get made at you?,angry,"Customer :Because I have spent 40000USD so far on your tuition and living expenses
+Agent :",angry,angry,joyful,"REASONING: The speaker is expressing that they cannot become angry with the other person, implying fondness or affection rather than hostility. This creates a warm, positive, moderately engaged emotional state, closest to joy.
+VAD_Estimate: [V: +0.60, A: +0.35, D: +0.25]
+EMOTION: joyful",[0.6  0.35 0.25],1.1356495938448619,True,False
+My boss embarrassed me infront of the investors.,angry,"Customer :My boss embarrassed me infront of the investors the other day.
+Agent :",angry,angry,afraid,"REASONING: The situation is negative and arousing, but the speaker’s core experience is public exposure, humiliation, and low control rather than assertive anger or low-energy sadness. This vulnerability and lack of dominance align most closely with the fear prototype.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.50]
+EMOTION: afraid",[-0.65  0.55 -0.5 ],0.7640026177965623,True,False
+My brother was in a drunken mood.,angry,"Customer :That's not acceptable even if he is drunk.
+Agent :",angry,angry,sad,"REASONING: The speaker observes their brother’s drunken state without an explicit emotion word. This seems to evoke passive concern or disappointment rather than active anger or fear, so valence is moderately negative, arousal is low, and dominance is low.
+VAD_Estimate: [V: -0.60, A: -0.30, D: -0.35]
+EMOTION: sad",[-0.6  -0.3  -0.35],1.0771258050942794,True,False
+MY son is refusing to go to sleep. I had a long day and am really tired,angry,"Customer :I had a rough day today and now my son refuses to go to bed
+Agent :",angry,angry,sad,"REASONING: The speaker is exhausted and faced with a frustrating bedtime conflict, but the dominant feeling is low-energy fatigue and helplessness rather than assertive anger. This aligns with negative valence, low arousal, and low dominance.
+VAD_Estimate: [V: -0.55, A: -0.30, D: -0.40]
+EMOTION: sad",[-0.55 -0.3  -0.4 ],1.1028145809699834,True,False
+i was chatting with my dad and the call dropped on us,angry,"Customer :Did you call him right back?
+Agent :",angry,angry,sad,"REASONING: The call dropping is a mildly unpleasant, low-energy interruption that the speaker cannot control, leading to disappointment or resignation rather than active anger or panic.  
+VAD_Estimate: [V: -0.55, A: -0.10, D: -0.35]  
+EMOTION: sad",[-0.55 -0.1  -0.35],0.9152595260361948,True,False
+I had a bad encounter of someone with horrible road rage.,angry,"Customer :That is so scary, I am glad that you are okay! People are so crazy!!!
+Agent :",angry,angry,afraid,"REASONING: The situation describes a threatening encounter with an aggressive driver, which likely triggered alarm and vulnerability rather than anger or enjoyment. Valence is strongly negative, arousal is high due to danger, and dominance is low because the speaker had little control over the other person’s behavior.
+VAD_Estimate: [V: -0.70, A: +0.60, D: -0.45]
+EMOTION: afraid",[-0.7   0.6  -0.45],0.7253964433328853,True,False
+when my brother got jumped,angry,"Customer :ah no thats horrible i hate to hear that
+Agent :",angry,angry,afraid,"REASONING: The event is a sudden, violent attack on a family member, producing intense distress and helplessness rather than a positive or empowered response. The situation likely triggers fear for the brother’s safety with low dominance because the speaker cannot control the attack.
+VAD_Estimate: [V: -0.70, A: +0.65, D: -0.45]
+EMOTION: afraid",[-0.7   0.65 -0.45],0.7278049189171505,True,False
+"Before my birthday, my boyfriend tried to get me to pick menu items that everyone could eat--including him. This meant I picked place that served only chicken because it's the only meat my boyfriend can have due to his digestive/health issue. Of course, I got anxious and upset because the place I picked was serving healthy food--my preference--but the serving sizes were missing and I couldn't tell what ingredients were in what; this lead to us arguing.",angry,"Customer :My boyfriend and I got into an argument a few days before my birthday party about catering options.
+Agent :",angry,angry,afraid,"REASONING: The speaker explicitly says she felt anxious, and the situation involves uncertainty and lack of control (unclear ingredients, missing serving sizes) plus interpersonal conflict, which fits high negative arousal and low dominance/vulnerability rather than anger or joy.
+
+VAD_Estimate: [V: -0.65, A: +0.58, D: -0.42]
+EMOTION: afraid",[-0.65  0.58 -0.42],0.6845436436049932,True,False
+"Before my birthday, my boyfriend tried to get me to pick menu items that everyone could eat--including him. This meant I picked place that served only chicken because it's the only meat my boyfriend can have due to his digestive/health issue. Of course, I got anxious and upset because the place I picked was serving healthy food--my preference--but the serving sizes were missing and I couldn't tell what ingredients were in what; this lead to us arguing.",angry,"Customer :Ah, I see. Well I hope it at least got worked out for you guys
+Agent :",angry,angry,afraid,"REASONING: The speaker explicitly says she felt “anxious and upset” during the event, indicating negative valence, high arousal, and a sense of low control/vulnerability. Although an argument occurred, the explicit anxiety anchors the emotion to fear rather than anger or sadness.
+
+VAD_Estimate: [V: -0.62, A: +0.58, D: -0.40]
+
+EMOTION: afraid",[-0.62  0.58 -0.4 ],0.6593178292750773,True,False
+it makes me very unhappy when i let someone out in traffic and they dont acknowledge me,angry,"Customer :it makes me angry when i let someone out in traffic without being acknowleded
+Agent :",angry,angry,sad,"REASONING: The explicit emotion word “unhappy” signals sadness/disappointment rather than anger; being unacknowledged after a kind act creates a deflated, unvalued feeling, with low arousal and low control.
+VAD_Estimate: [V: -0.55, A: -0.15, D: -0.35]
+EMOTION: sad",[-0.55 -0.15 -0.35],0.9535197952848173,True,False
+I had a bad encounter of someone with horrible road rage.,angry,"Customer :Oh no, What happened?
+Agent :",angry,angry,afraid,"REASONING: The encounter with another driver's aggressive road rage is a negative, unpredictable, and potentially threatening event. It creates high arousal and a sense of vulnerability or lack of control rather than assertive confrontation.
+VAD_Estimate: [V: -0.65, A: +0.60, D: -0.40]
+EMOTION: afraid",[-0.65  0.6  -0.4 ],0.664981202741852,True,False
+I was waiting for a package and I watched the mailman drive by my house without delivering it.,angry,"Customer :Wow, did he forget your address?
+Agent :",angry,angry,sad,"REASONING: The situation involves a disappointing outcome with no direct threat or clear target for confrontation, producing low-energy frustration and resignation. Valence is negative, arousal is low, and there is a sense of helplessness over the unmet expectation.
+VAD_Estimate: [V: -0.50, A: -0.20, D: -0.30]
+EMOTION: sad",[-0.5 -0.2 -0.3],0.9626525853079085,True,False
+My boss embarrassed me infront of the investors.,angry,"Customer :Oh no! What happened?
+Agent :",angry,angry,afraid,"REASONING: The boss’s public action triggered a negative, high-arousal state of vulnerability and exposedness, not assertive anger or low-energy sadness. The speaker felt socially threatened and helpless, aligning closest with fear.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.45]
+EMOTION: afraid",[-0.65  0.55 -0.45],0.714982517268779,True,False
+My mother got scammed out of hundreds of dollars.  It was some internet phishing thing.  She had no recourse.,angry,"Customer :It was some internet phishing thing.  She had zero recourse.  I guess it's actually a little lucky she didn't lose more.
+Agent :",angry,angry,sad,"REASONING: The scam is a clearly negative event, but the phrase “She had no recourse” emphasizes resignation and helplessness rather than active frustration or confrontation. This low-energy, passive negative state aligns more with sadness than with anger.
+VAD_Estimate: [V: -0.65, A: -0.25, D: -0.40]
+EMOTION: sad",[-0.65 -0.25 -0.4 ],1.0713076122197582,True,False
+My dishwasher leaked and we had to have our whole kitchen and living redone due to the damages.,angry,"Customer :My dishwasher leaked and it damaged the floors and kitchen cupboards.
+Agent :",angry,angry,sad,"REASONING: The situation is clearly unpleasant due to property damage and forced renovation, but it is described in a resigned, matter-of-fact way without active blame, confrontation, or high energy. This points to passive frustration/dejection, with low control over the situation.
+VAD_Estimate: [V: -0.55, A: -0.20, D: -0.30]
+EMOTION: sad",[-0.55 -0.2  -0.3 ],0.963431367560762,True,False
+"I told my mom that I didin't want to be in compsci anymore, because I was really miserable. She said that I should do what makes me happy.",joyful,"Customer :Thanks. My mom is usually very strict, and I thought she would be really upset.
+Agent :",joyful,joyful,sad,"REASONING: The speaker explicitly says they were “really miserable” about being in compsci, indicating strong displeasure, low energy, and a sense of dejection. Although the mother’s response is supportive, the emotion felt during the situation is primarily sadness/misery.
+VAD_Estimate: [V: -0.70, A: -0.25, D: -0.40]
+EMOTION: sad",[-0.7  -0.25 -0.4 ],1.7963852593472258,True,False
+"I suffered from such terrible acne when I was younger that thankfully, I rarely ever have when I started college.",joyful,"Customer :That's really bad, but really good that your faced didn't turn out scarred for life. 
+Agent :",joyful,joyful,sad,"REASONING: The speaker describes suffering from terrible acne in the past, which indicates unpleasantness, low energy, and feelings of powerlessness/self-consciousness; the grateful reflection about improvement is a later appraisal and should not override the emotion during the acne itself.  
+VAD_Estimate: [V: -0.65, A: -0.30, D: -0.35]  
+EMOTION: sad",[-0.65 -0.3  -0.35],1.756843760839307,True,False
+"I told my mom that I didin't want to be in compsci anymore, because I was really miserable. She said that I should do what makes me happy.",joyful,"Customer :That's good advice.  If you're not happy doing something you should spend time thinking about what you'd really like to be doing.
+Agent :",joyful,joyful,sad,"REASONING: The speaker explicitly describes feeling “miserable” in the situation, which signals persistent unhappiness and dejection. The conversation with mom is supportive, but the dominant emotion being expressed is sadness/low mood, not anger or fear.
+
+VAD_Estimate: [V: -0.65, A: -0.25, D: -0.35]
+
+EMOTION: sad",[-0.65 -0.25 -0.35],1.7352233285660956,True,False
+"I suffered from such terrible acne when I was younger that thankfully, I rarely ever have when I started college.",joyful,"Customer :I suffered from such terrible acne when I was younger that thankfully, I rarely ever have when I started college.
+Agent :",joyful,joyful,sad,"REASONING: The speaker describes suffering through terrible acne in their younger years, which was a distressing, self-conscious experience with no clear target for blame. The passive wording ""suffered"" points to low-energy dejection rather than anger or fear.
+VAD_Estimate: [V: -0.60, A: -0.25, D: -0.35]
+EMOTION: sad",[-0.6  -0.25 -0.35],1.694845125667829,True,False
+"I suffered from such terrible acne when I was younger that thankfully, I rarely ever have when I started college.",joyful,"Customer :Well, I have some scars but at least I don't have acne anymore.
+Agent :",joyful,joyful,sad,"REASONING: The speaker describes suffering from terrible acne when younger, which was an unpleasant and distressing experience with little control over the condition. The later relief is a reflection, not the emotion during the acne itself, so the dominant felt emotion is sadness rather than anger, fear, or joy.
+VAD_Estimate: [V: -0.60, A: -0.25, D: -0.35]
+EMOTION: sad",[-0.6  -0.25 -0.35],1.694845125667829,True,False
+I was going to visit my grandmother today!,joyful,"Customer :Thank you so much, My grandmother always has fun stuff to do at her house!
+Agent :",joyful,joyful,sad,"REASONING: The statement implies a plan to visit the grandmother was interrupted or did not happen, producing disappointment and longing rather than active frustration or fear. This is a passive, sorrowful response with low energy and reduced sense of control.
+VAD_Estimate: [V: -0.60, A: -0.30, D: -0.35]
+EMOTION: sad",[-0.6  -0.3  -0.35],1.71697408250678,True,False
+I used to be mad when girls wouldn't text me back....but now I'm more happy being unattached and busy making money and as a result they're the ones chasing me now,joyful,"Customer :I used to hate it when girls wouldn't text me back.  Now that I'm focused on my job and networking I put little to zero effort in meeting girls...and as a result they're the ones checkin up on me every night lmao
+Agent :",joyful,joyful,angry,"REASONING: The speaker explicitly states they ""used to be mad,"" which is a direct emotion label for the past situation. Even though they now feel happy, temporal anchoring requires judging the emotion felt during the described event, which is anger.
+VAD_Estimate: [V: -0.51, A: +0.59, D: +0.25]
+EMOTION: angry",[-0.51  0.59  0.25],1.2786711852544421,True,False
+I finally have enough money to quit my bad job. It has made me miserable for years.,joyful,"Customer :I know. I cannot tell you how happy I am. Things are a little hard in my life so this will relieve some of that stress.
+Agent :",joyful,joyful,sad,"REASONING: The speaker explicitly says the job has made them “miserable,” which signals prolonged unhappiness and dejection rather than anger or fear. This maps to negative valence, low arousal, and low dominance/control.
+VAD_Estimate: [V: -0.60, A: -0.30, D: -0.35]
+EMOTION: sad",[-0.6  -0.3  -0.35],1.71697408250678,True,False
+"I was upset when I found out my new job does not have paid lunches, I was hoping they would be",sad,"Customer :No, like I get paid to take a lunch break, still getting my hourly wage for the hour I eat
+Agent :",sad,sad,angry,"REASONING: The speaker explicitly says ""upset,"" which signals displeasure and frustration about an unmet expectation regarding their new job. This is active irritation directed at a situation/policy, not sadness or fear, so it aligns closest with anger in the VAD framework.
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.20]
+EMOTION: angry",[-0.55  0.5   0.2 ],0.9381897462667134,True,False
+my brother is sick,sad,"Customer :my brother is sick
+Agent :",sad,sad,afraid,"REASONING: The situation is negative because a loved one is unwell, and the speaker likely feels worried or uneasy rather than cheerful. Arousal is moderately elevated from concern, and dominance is low because the speaker has little control over the brother’s health.
+VAD_Estimate: [V: -0.55, A: +0.45, D: -0.40]
+EMOTION: afraid",[-0.55  0.45 -0.4 ],0.7278049189171505,True,False
+my brother is sick,sad,"Customer :Oh wow it sounds like he is doing great, I hope he feels better soon!
+Agent :",sad,sad,afraid,"REASONING: A loved one being sick is a negative and worrying situation with uncertain outcomes, creating concern and a sense of helplessness rather than anger or joy; valence is negative, arousal is elevated, and dominance is low.
+VAD_Estimate: [V: -0.55, A: +0.45, D: -0.40]
+EMOTION: afraid",[-0.55  0.45 -0.4 ],0.7278049189171505,True,False
+I lost my wallet and had to get all new cards,sad,"Customer :I hope someone turns it in soon to you.. did you lose out on money too? 
+Agent :",sad,sad,angry,"REASONING: Losing a wallet is an unpleasant, frustrating hassle that creates irritation and active annoyance, especially with the burden of replacing all cards. This is higher-energy frustration rather than passive sadness or anxious fear, with a sense of controlled irritation.
+VAD_Estimate: [V: -0.55, A: +0.45, D: +0.20]
+EMOTION: angry",[-0.55  0.45  0.2 ],0.8976079322287654,True,False
+I lost my wallet and had to get all new cards,sad,"Customer :So I lost my wallet and had to get a new ID issued to me.
+Agent :",sad,sad,angry,"REASONING: Losing a wallet is unpleasant but not life-threatening; the hassle of replacing cards creates active irritation and frustration rather than helplessness or sadness. This points to moderately negative valence, heightened arousal, and some assertive control in dealing with the problem.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.25]
+EMOTION: angry",[-0.55  0.55  0.25],1.0075713374247999,True,False
+"When my father went into hospital, after he fell down the stairs, we had no idea he had cancer.",sad,"Customer :What?! Are you sick or your family member?
+Agent :",sad,sad,afraid,"REASONING: The speaker is facing an uncertain and potentially serious health threat to a loved one, with no clear control over the outcome, triggering worry and fear rather than anger or sadness.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.40]
+EMOTION: afraid",[-0.65  0.55 -0.4 ],0.8232253640407347,True,False
+I found out my niece may be autistic.,sad,"Customer :I recently found out that my niece may be autistic.
+Agent :",sad,sad,afraid,"REASONING: The speaker is facing an uncertain situation regarding their niece’s development, which likely triggers worry and concern rather than joy or anger. This sense of vulnerability and lack of control over the outcome aligns with anxiety/fear, with negative valence, moderate-to-high arousal, and low dominance.
+VAD_Estimate: [V: -0.55, A: +0.35, D: -0.35]
+EMOTION: afraid",[-0.55  0.35 -0.35],0.6254598308444757,True,False
+"Don't you hate it when you're feeling confident in a new hairstyle or some clothes you're wearing, and then someone makes fun of you? Had that happen the other day. Makes you want to be able to hide in the background and never try anything new again",sad,"Customer :That's so disappointing. People should really not be judging others when they don't know how much effort was put in to the outfit.
+Agent :",sad,sad,angry,"REASONING: The speaker explicitly expresses irritation/“hate” about being mocked, with clear blame toward someone else, producing negative valence and frustrated arousal. The urge to hide adds some vulnerability, but the active annoyance and external blame make anger the closest fit.
+VAD_Estimate: [V: -0.58, A: +0.55, D: +0.15]
+EMOTION: angry",[-0.58  0.55  0.15],0.951472542956443,True,False
+My cat got ran over by someone. He sped off like it didn't matter.,sad,"Customer :Oh no, what happened to your cat?
+Agent :",sad,sad,angry,"REASONING: The speaker attributes the harm to a specific person who fled callously, which triggers blame and outrage rather than helpless fear; this is high-arousal displeasure with assertive control.
+VAD_Estimate: [V: -0.55, A: +0.65, D: +0.20]
+EMOTION: angry",[-0.55  0.65  0.2 ],1.0647534925981694,True,False
+I broke my laptop screen.,sad,"Customer :That sucks! It happens to the best of us. At least the computer didn't break.
+Agent :",sad,sad,angry,"REASONING: Breaking one’s own laptop screen is a negative, irritating event that likely triggers frustration and self-blame rather than passive grief or fear. This fits moderate-high arousal and some assertive annoyance, matching anger more than sadness.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.979642792042079,True,False
+My friends went out drinking last weekend without me. They didn't even both sending me a text to see what I was doing.,sad,"Customer :My friends didn't invite me out drinking last weekend. They didn't even bother texting me!
+Agent :",sad,sad,angry,"REASONING: The speaker expresses frustration and irritation at being excluded, specifically blaming their friends for not even texting. This involves negative valence, moderately high arousal, and assertive blame rather than passive helplessness, aligning with anger rather than sadness or fear.
+VAD_Estimate: [V: -0.60, A: +0.55, D: +0.30]
+EMOTION: angry",[-0.6   0.55  0.3 ],1.0345047124107267,True,False
+I missed the bus today. I ended up being late for school.,sad,"Customer :omg, Yesterday I did the same thing, but I was late to class!
+Agent :",sad,sad,angry,"REASONING: Missing the bus and being late is an unpleasant, frustrating inconvenience that triggers irritation and active annoyance rather than sadness, fear, or joy. The arousal is moderate, and there is a slight sense of frustrated control rather than helplessness.
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.10]
+EMOTION: angry",[-0.55  0.5   0.1 ],0.8855506761332183,True,False
+My dog ran away today and I cant find her.,sad,"Customer :Have you ever had a pet run away?
+Agent :",sad,sad,afraid,"REASONING: The situation is strongly unpleasant, with urgent concern and active searching creating high arousal. The speaker feels helpless and lacks control over the outcome, fitting fear/anxiety rather than sadness or anger.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.40]
+EMOTION: afraid",[-0.65  0.55 -0.4 ],0.8232253640407347,True,False
+My goldfish ran away yesterday. I was so distraught!,sad,"Customer :....I never thought about that! WILSON! WHERE ARE YOU!!!!
+Agent :",sad,sad,afraid,"REASONING: The explicit emotion word “distraught” signals strong displeasure with high agitation and a sense of helplessness. There is no clear target for blame, so this fits fear/distress rather than anger or joy.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.40]
+EMOTION: afraid",[-0.65  0.55 -0.4 ],0.8232253640407347,True,False
+My girlfriend left me for my best friend,sad,"Customer :That is the worst thing ever.
+Agent :",sad,sad,angry,"REASONING: The situation involves a specific interpersonal betrayal, which typically triggers active frustration and blame toward the girlfriend and best friend rather than passive grief. This is high in displeasure, moderately high arousal, and has a sense of righteous anger/assertiveness.
+
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.979642792042079,True,False
+i was upset when i couldnt get the day off,sad,"Customer :i was upset when i couldnt get the day off
+Agent :",sad,sad,angry,"REASONING: The speaker is frustrated by an external obstacle blocking their request, producing clear displeasure and irritation rather than helpless fear or passive sadness. There is enough assertive complaint to align with anger.
+VAD_Estimate: [V: -0.55, A: +0.40, D: +0.20]
+EMOTION: angry",[-0.55  0.4   0.2 ],0.8580209787645056,True,False
+My dog pooped on the rug today. I was so distraught.,sad,"Customer :My dog pooped on the rug today.
+Agent :",sad,sad,afraid,"REASONING: The speaker explicitly says they were ""distraught,"" which indicates intense agitation and distress rather than calm sadness. This is highly negative in valence with elevated arousal and a lowered sense of control, most closely matching fear.
+VAD_Estimate: [V: -0.70, A: +0.55, D: -0.40]
+EMOTION: afraid",[-0.7   0.55 -0.4 ],0.8259539938761723,True,False
+My dog died today. I am so distraught.,sad,"Customer :I'm sorry to hear that, that's got to be tough on you.
+Agent :",sad,sad,afraid,"REASONING: The explicit emotion word ""distraught"" signals high-arousal distress and a sense of helplessness, with negative valence and low dominance, aligning more closely with fear than with low-energy sadness.
+VAD_Estimate: [V: -0.65, A: +0.60, D: -0.45]
+EMOTION: afraid",[-0.65  0.6  -0.45],0.8784645695758025,True,False
+My dog ran away from home!,sad,"Customer :My dog ran away from home!
+Agent :",sad,sad,afraid,"REASONING: The sudden loss of a pet creates distress, uncertainty, and helplessness, with high arousal and low control over the situation.
+VAD_Estimate: [V: -0.70, A: +0.60, D: -0.45]
+EMOTION: afraid",[-0.7   0.6  -0.45],0.8810221336606703,True,False
+i was not happy when i couldnt get out of work on time,sad,"Customer :I would be too. What was the hold up for?
+Agent :",sad,sad,angry,"REASONING: Being unable to leave work on time is an unpleasant, frustrating situation that triggers irritation and active annoyance rather than fear or sadness. The “not happy” phrasing signals displeasure with moderate arousal and a mildly assertive complaint.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.979642792042079,True,False
+My car stop working last week. I took it to the mechanic. It need a lot of money to fix it.,sad,"Customer :I will not be able to fix it. I need to go to work. It is making me feel bad.
+Agent :",sad,sad,angry,"REASONING: The situation is clearly unpleasant, with frustration over the car breakdown and costly repairs; this active irritation indicates moderate-to-high arousal and a mildly assertive, complaining stance.
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.20]
+EMOTION: angry",[-0.55  0.5   0.2 ],0.9381897462667134,True,False
+"In school, people would always bully me.",sad,"Customer :In school, the kids would always bully me and call me names
+Agent :",sad,sad,afraid,"REASONING: Being repeatedly bullied at school would be unpleasant and distressing, with a strong sense of vulnerability and no perceived control over the situation; the ongoing threat produces anxious, high-arousal helplessness rather than assertive anger or passive sadness.
+VAD_Estimate: [V: -0.70, A: +0.55, D: -0.50]
+EMOTION: afraid",[-0.7   0.55 -0.5 ],0.8403570669661796,True,False
+"It's been a long week already and it's only Tuesday! Trying to heal through trauma and dreaming of it, really is unpleasant!",sad,"Customer :I know right? I hate those weeks! Time only goes slow when it's not so good!
+Agent :",sad,sad,angry,"REASONING: The speaker is expressing frustration and irritation about an exhausting week and unpleasant trauma-related dreams, with exclamatory language indicating high arousal and active complaining rather than passive grief. Valence is clearly negative, arousal is elevated, and the complaining tone gives some assertive energy.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.15]
+EMOTION: angry",[-0.55  0.55  0.15],0.9535197952848173,True,False
+"When people buy assorted doughnuts, and somebody eats the only flavor you like.",sad,"Customer :Yes, I hate that. I usually end up going back and getting some more just for me.
+Agent :",sad,sad,angry,"REASONING: The situation involves someone taking the last desired item, which is a clear, targeted frustration with blame directed at another person. This creates negative valence, moderate-to-high arousal, and a sense of assertive irritation rather than helplessness.  
+VAD_Estimate: [V: -0.55, A: +0.60, D: +0.25]  
+EMOTION: angry",[-0.55  0.6   0.25],1.048665819029113,True,False
+I woke up to something quite terrible this morning.  My vegetable garden has been ravaged through by some strange animal.,sad,"Customer :I woke up this morning only to find out that some wild animal had destroyed my garden!
+Agent :",sad,sad,angry,"REASONING: The destruction of the speaker's garden is a negative, frustrating event caused by an identifiable intruder (an animal), producing irritation and blame rather than helplessness or grief. This suggests high displeasure, moderate arousal, and a somewhat assertive sense of annoyance.
+VAD_Estimate: [V: -0.55, A: +0.45, D: +0.15]
+EMOTION: angry",[-0.55  0.45  0.15],0.8690224392960172,True,False
+"It's been a long week already and it's only Tuesday! Trying to heal through trauma and dreaming of it, really is unpleasant!",sad,"Customer :It's been a long week already and it's only Tuesday!
+Agent :",sad,sad,afraid,"REASONING: The speaker expresses frustration and exhaustion about a long week, but the deeper distress comes from trauma-related dreams, which feel intrusive, unpleasant, and not directed at a specific person to blame. This is high-negative arousal with a sense of vulnerability and low control, consistent with fear rather than anger or sadness.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.40]
+EMOTION: afraid",[-0.65  0.55 -0.4 ],0.8232253640407347,True,False
+I feel bad I don't always get to go through bad things and full get healed. I have someone who was around me during the worst times of my life who took that away from me and made the focus be on them..which disrupted my process of grief and healing/,sad,"Customer :I feel bad I don't always get to go through bad things and full get healed. 
+Agent :",sad,sad,angry,"REASONING: The speaker expresses distress and grievance, but directs blame at a specific person who “took away” their healing and disrupted their grief. This is active frustration/complaint toward an identifiable cause rather than helpless fear or passive sadness, so it fits anger.
+
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.20]
+EMOTION: angry",[-0.55  0.5   0.2 ],0.9381897462667134,True,False
+I missed the bus today. I ended up being late for school.,sad,"Customer :I didn't get out of the shower fast enough today so I missed the bus
+Agent :",sad,sad,angry,"REASONING: Missing the bus and being late is a negative, frustrating event that creates irritation and mild stress, but not helplessness or life-threatening fear. This is active annoyance rather than passive sadness.
+VAD_Estimate: [V: -0.45, A: +0.35, D: +0.10]
+EMOTION: angry",[-0.45  0.35  0.1 ],0.7756932383358772,True,False
+"Don't you hate it when you're feeling confident in a new hairstyle or some clothes you're wearing, and then someone makes fun of you? Had that happen the other day. Makes you want to be able to hide in the background and never try anything new again",sad,"Customer :I think it was my haircut :( But thank you for the kind words. I need you to hype me up in the morning and make me feel confident!
+Agent :",sad,sad,afraid,"REASONING: Being mocked after feeling confident is a socially threatening, low-control experience; the desire to hide and avoid trying new things reflects high arousal and vulnerable withdrawal rather than anger or sadness.
+VAD_Estimate: [V: -0.64, A: +0.60, D: -0.43]
+EMOTION: afraid",[-0.64  0.6  -0.43],0.8757853618324527,True,False
+My little boy is starting Kindergarten in a few days,sad,"Customer :Oh most definitely. My daughter also got accepted into Head Start so it will be just me and my work.
+Agent :",sad,sad,joyful,"REASONING: The situation describes a positive life milestone for the parent’s child, with no explicit emotion word or negative cues. It evokes warmth, pride, and gentle anticipation, indicating positive valence, moderate arousal, and a sense of meaningful parental involvement.
+VAD_Estimate: [V: +0.65, A: +0.40, D: +0.30]
+EMOTION: joyful",[0.65 0.4  0.3 ],1.5761345120261785,True,False
+"Don't you hate it when you're feeling confident in a new hairstyle or some clothes you're wearing, and then someone makes fun of you? Had that happen the other day. Makes you want to be able to hide in the background and never try anything new again",sad,"Customer :That is just the worst, who made fun of you?
+Agent :",sad,sad,angry,"REASONING: The speaker is complaining about a specific person mocking them, and the phrase “hate it” signals clear irritation and frustration, which points to anger rather than fear or sadness. The negative event raises arousal somewhat, and while the final thought includes wanting to hide, the complaint is still directed at the mocker, keeping dominance mildly assertive.
+
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.979642792042079,True,False
+I broke my phone today. It was the worst.,sad,"Customer :I got in a heated conversation and threw it lol
+Agent :",sad,sad,angry,"REASONING: The situation is clearly negative, and the phrase “the worst” signals active frustration/complaining rather than passive sadness. There is no threat or vulnerability, so the closest match is anger with moderate arousal and some assertive control.
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.10]
+EMOTION: angry",[-0.55  0.5   0.1 ],0.8855506761332183,True,False
+My dog ran away from home!,sad,"Customer :Yesterday, I think he is gone forever.
+Agent :",sad,sad,afraid,"REASONING: The sudden loss of a beloved pet creates a negative, high-arousal response of panic and worry, with a low sense of control over the outcome. This aligns with fear rather than sadness because the situation is urgent and uncertain, not passive resignation.
+VAD_Estimate: [V: -0.70, A: +0.60, D: -0.45]
+EMOTION: afraid",[-0.7   0.6  -0.45],0.8810221336606703,True,False
+I lost my cell phone today. I can't believe it,sad,"Customer :I do. We just got home so I am going to call once we get settled in. I can't believe it
+Agent :",sad,sad,angry,"REASONING: The loss of a personal possession triggers frustration and irritation rather than grief or fear; the exclamation “I can’t believe it” indicates active annoyance and agitated energy, which fits anger more than passive sadness.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.979642792042079,True,False
+My goldfish ran away yesterday. I was so distraught!,sad,"Customer :My goldfish ran away yesterday. I am so distraught because I can't find the little tyke!
+Agent :",sad,sad,afraid,"REASONING: The speaker explicitly says ""distraught,"" signaling intense, agitated distress about the lost pet. This is negative in valence, high in arousal due to agitation, and low in dominance because the situation feels helpless and uncontrollable, closest to fear.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.40]
+EMOTION: afraid",[-0.65  0.55 -0.4 ],0.8232253640407347,True,False
+I dropped my phone in the toilet and I didn't have insurance on it. It was a pretty expensive phone too.,sad,"Customer :I dropped my phone in the toilet last night and now it's not functioning right. I also didn't have insurance on it which is a huge bummer, because this phone was expensive!
+Agent :",sad,sad,angry,"REASONING: The event is clearly negative, involving loss of a valuable possession. The tone reflects frustration and irritation rather than helplessness or grief, with moderate-to-high arousal from the annoyance of the mistake.
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.10]
+EMOTION: angry",[-0.55  0.5   0.1 ],0.8855506761332183,True,False
+I woke up to something quite terrible this morning.  My vegetable garden has been ravaged through by some strange animal.,sad,"Customer :Unfortunately, no.  I am sad in some ways but happy the wild creature had a full meal last night.
+Agent :",sad,sad,angry,"REASONING: The situation involves damage to the speaker's property, causing frustration and irritation rather than fear or sadness. The anger is directed at an external cause (the animal), with moderate to high arousal and a sense of assertive annoyance.
+
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.20]
+EMOTION: angry",[-0.55  0.5   0.2 ],0.9381897462667134,True,False
+"I recently changed jobs for a better opportunity with more pay. I'm very pleased with the new job, but I did feel bummed about leaving my former co-workers behind. We had a good time and I liked those kids.",sad,"Customer :That happens sometimes but I'm sure you will make a lot of new friends in your new job.
+Agent :",sad,sad,joyful,"REASONING: The speaker explicitly says they are “very pleased” with the new job, which signals a positive and satisfying emotional state; the “bummed” feeling about leaving co-workers is secondary and nostalgic rather than dominant. Valence is positive, arousal is moderately calm, and dominance is moderately high due to the empowering job change.
+
+VAD_Estimate: [V: +0.65, A: +0.35, D: +0.35]
+EMOTION: joyful",[0.65 0.35 0.35],1.5764517119150843,True,False
+I dropped my phone in the toilet and I didn't have insurance on it. It was a pretty expensive phone too.,sad,"Customer :Oh no! Have you tried the old ""put it in a bag of rice"" trick?
+Agent :",sad,sad,angry,"REASONING: The situation is clearly unpleasant, and the speaker’s tone conveys active frustration and irritation about the costly loss rather than passive grief. Arousal is moderately high due to the complaining, with a slight sense of control from venting, but not as dominant as prototypical anger since there is no one to blame.
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.15]
+EMOTION: angry",[-0.55  0.5   0.15],0.9108786966440701,True,False
+i knew i shouldnt have trusted my brother with my dog,sad,"Customer :i knew i shouldnt have trusted my brother with my dog
+Agent :",sad,sad,angry,"REASONING: The speaker blames a specific person—their brother—for failing to care for the dog, which creates irritation, resentment, and a sense of being wronged. This is high-arousal negative affect with assertive blame, consistent with anger rather than fear or sadness.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.979642792042079,True,False
+i wasnt happy when i had to go into work on saturday,sad,"Customer :That never sounds fun
+Agent :",sad,sad,angry,"REASONING: Being required to work on Saturday is an unpleasant inconvenience that typically triggers frustration and irritation, not fear or deep sadness. This is active displeasure with a mildly assertive complaining tone, rather than helpless vulnerability.
+
+VAD_Estimate: [V: -0.50, A: +0.45, D: +0.20]
+EMOTION: angry",[-0.5   0.45  0.2 ],0.9034378783292186,True,False
+My dog got very sick the other day and had to go to the vet. He is my best friend.,sad,"Customer :My dog got very sick the other day and had to go to the vet. 
+Agent :",sad,sad,afraid,"REASONING: The dog becoming seriously ill is a negative, distressing event involving uncertainty about a beloved companion’s health, prompting worry and helplessness rather than anger or joy. This aligns with high arousal from concern and low dominance from lack of control over the situation.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.45]
+EMOTION: afraid",[-0.65  0.55 -0.45],0.8289752710425082,True,False
+I just found out my brother had to get checked into rehab!  I had no idea he had a problem and am quite upset over it!,sad,"Customer :Addiction is a scary thing! I wish him the best.
+Agent :",sad,sad,afraid,"REASONING: The news about the brother’s rehab is negative and surprising, and the exclamation plus “quite upset” signals high-arousal distress. The situation involves helplessness and concern rather than a clear target for blame, so dominance is low and fear is the closest match.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.40]
+EMOTION: afraid",[-0.65  0.55 -0.4 ],0.8232253640407347,True,False
+I was sad at how mad I got at my mom when she threw my vitamins away,sad,"Customer :I also have a great parent. However I got a bit too mad at her when she threw away a lot of moneys worth of special vitamins accidentally.
+Agent :",sad,sad,angry,"REASONING: The in-the-moment reaction to the mother throwing away the vitamins is anger at a specific person, with irritation and blame; the phrase “sad at how mad I got” is a later reflection on that anger, not the emotion during the event. This yields negative valence, high arousal, and assertive control.
+VAD_Estimate: [V: -0.55, A: +0.60, D: +0.25]
+EMOTION: angry",[-0.55  0.6   0.25],1.048665819029113,True,False
+"Don't you hate it when you're feeling confident in a new hairstyle or some clothes you're wearing, and then someone makes fun of you? Had that happen the other day. Makes you want to be able to hide in the background and never try anything new again",sad,"Customer :Yes, it seemed to bug out, not sure
+Agent :",sad,sad,afraid,"REASONING: Being mocked while feeling confident is a social injury that makes the speaker feel exposed and vulnerable; the urge to hide and avoid trying new things is an anxious/avoidant response rather than anger-driven confrontation or passive resignation, so valence is negative, arousal is elevated, and dominance is low.
+
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.45]
+
+EMOTION: afraid",[-0.65  0.55 -0.45],0.8289752710425082,True,False
+"Harvey weinstein was such a good studio , they just ruined their business and now there arent any good movies",sad,"Customer :What were some of your favorites?
+Agent :",sad,sad,angry,"REASONING: The speaker expresses frustration and blame toward a specific entity (“they”) for ruining their business and causing a lack of good movies. This is an active, irritated complaint rather than sadness or fear, with clear target-directed anger.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.979642792042079,True,False
+I am having to be strong and not respond when it comes to a person I care about at times. It is hard to not be an enabler sometimes. It requires a LOT of strength and tough love. I,sad,"Customer :Yeah, it can be tough. Especially if you're in a heated argument.
+Agent :",sad,sad,angry,"REASONING: The situation is emotionally difficult and draining, so valence is negative. However, the speaker describes actively summoning strength and exercising tough love, which involves elevated arousal and a controlled, assertive stance rather than passive sadness or fear.  
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.35]  
+EMOTION: angry",[-0.55  0.5   0.35],1.0303882763308208,True,False
+I miss being a kid. I hate all the responsibility I have now,sad,"Customer :I know right. I want to go back to like 8
+Agent :",sad,sad,angry,"REASONING: The speaker explicitly says “hate” about current responsibilities, expressing active frustration and irritation rather than passive sadness or fear. This is high-displeasure, high-arousal, and somewhat assertive blame, matching anger.
+VAD_Estimate: [V: -0.60, A: +0.60, D: +0.25]
+EMOTION: angry",[-0.6   0.6   0.25],1.0460401521930218,True,False
+"I had 20 dollars sitting in my car and I opened my windows. Next thing you know, the 20 dollars flew out the window.",sad,"Customer :Dang, that's quite a large amount of money to lose. Hopefully it went to someone who needs it.
+Agent :",sad,sad,angry,"REASONING: Losing the money is an unpleasant, frustrating event that spurs irritation and active annoyance rather than helplessness or fear. The arousal is moderate-high, with a slight sense of control over one’s reaction.
+
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.10]
+EMOTION: angry",[-0.55  0.55  0.1 ],0.9293546147730694,True,False
+My dog ran away today. I was so distraught.,sad,"Customer :My dog ran away today.
+Agent :",sad,sad,afraid,"REASONING: The explicit emotion word “distraught” signals intense distress and agitation. Losing a dog is highly unpleasant, emotionally overwhelming, and uncontrollable, with high arousal and low dominance rather than anger or passive sadness.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.45]
+EMOTION: afraid",[-0.65  0.55 -0.45],0.8289752710425082,True,False
+"Growing up, my mom always played a lot of Aretha Franklin. When I found out that she passed I was bewildered.",sad,"Customer :Yes, I have a special place in my heart for classic music. 
+Agent :",sad,sad,afraid,"REASONING: The speaker explicitly says they felt “bewildered” upon hearing of Aretha Franklin’s death—this is a negative, shocked, and disoriented state rather than anger, joy, or calm sadness. The emotional state is high in unpleasantness, elevated in arousal from sudden confusion, and low in dominance due to feeling overwhelmed, which aligns most closely with the fear prototype.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.45]
+EMOTION: afraid",[-0.65  0.55 -0.45],0.8289752710425082,True,False
+I was upset when the spurs traded away Khawi Leonard,sad,"Customer :I was upset when the spurs traded away Khawi Leonard
+Agent :",sad,sad,angry,"REASONING: The speaker is blaming the Spurs organization as a specific cause for trading away the player, producing frustration and irritation rather than helpless fear or passive sadness. This is a negative, moderately high-arousal reaction with some assertive blame toward the team.
+VAD_Estimate: [V: -0.55, A: +0.45, D: +0.20]
+EMOTION: angry",[-0.55  0.45  0.2 ],0.8976079322287654,True,False
+My dog ran away today and I cant find her.,sad,"Customer :I also had a dog, did you find your dog?
+Agent :",sad,sad,afraid,"REASONING: The event is highly negative and involves uncertainty about the dog’s safety, creating anxious distress rather than anger or joy. The speaker feels helpless and worried while searching, with high arousal and low dominance.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.45]
+EMOTION: afraid",[-0.65  0.55 -0.45],0.8289752710425082,True,False
+My favorite cake stand was stolen.,sad,"Customer :My favorite cake stand that my aunt gave me was stolen.
+Agent :",sad,sad,angry,"REASONING: The theft of a valued possession is a negative, irritating event with a clear unfair cause, prompting frustration and blame rather than helplessness or grief. This aligns with moderate-to-high arousal and assertive annoyance.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.25]
+EMOTION: angry",[-0.55  0.55  0.25],1.0075713374247999,True,False
+I dropped my 5 dollar ice cream as soon as I left the store,sad,"Customer :Just the worst, it was one of my favorite gourmet ice creams too, salted caramel flavour
+Agent :",sad,sad,angry,"REASONING: Dropping the ice cream immediately after buying it is an annoying, frustrating loss, producing negative feelings with moderate arousal and a sense of irritation rather than helpless sadness.
+VAD_Estimate: [V: -0.45, A: +0.50, D: +0.20]
+EMOTION: angry",[-0.45  0.5   0.2 ],0.951945376584182,True,False
+My little boy is starting Kindergarten in a few days,sad,"Customer :They do grow up quickly don't they! But just think of all the wonderful new things he'll learn and friends he'll make. He'll be able to tell you all about it when he gets home!
+Agent :",sad,sad,joyful,"REASONING: The situation involves a proud, warm family milestone with no explicit negative words; it suggests pleasant anticipation and affection. Valence is positive, arousal is moderately elevated, and the speaker feels a sense of loving control/pride.
+VAD_Estimate: [V: +0.65, A: +0.35, D: +0.30]
+EMOTION: joyful",[0.65 0.35 0.3 ],1.5555384919699031,True,False
+"In school, people would always bully me.",sad,"Customer :Why did they do tha
+Agent :",sad,sad,afraid,"REASONING: Repeated bullying involves an ongoing interpersonal threat where the speaker is targeted and powerless, producing strongly negative feelings, high arousal, and low dominance. The lack of confrontation or expressed anger points to fear rather than anger.
+VAD_Estimate: [V: -0.65, A: +0.60, D: -0.45]
+EMOTION: afraid",[-0.65  0.6  -0.45],0.8784645695758025,True,False
+I dropped a bowl of mashed potatoes and it smashed all over the floor,sad,"Customer :Thanks, you're so sweet. It was fine, my boyfriend helped me clean it up.
+Agent :",sad,sad,angry,"REASONING: The event is unpleasant and frustrating: a sudden, messy accident causes irritation rather than fear or passive sadness. There is active annoyance/energy from the mess, so it aligns most closely with anger.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.15]
+EMOTION: angry",[-0.55  0.55  0.15],0.9535197952848173,True,False
+My iguana ran away today. I never have been so distraught.,sad,"Customer :They sure can't! I was so upset. I do hope I find him in the next couple of days.
+Agent :",sad,sad,afraid,"REASONING: The runaway pet triggers intense distress and helplessness, with high agitation and low felt control, making the experience sharply negative and high-arousal. This matches the afraid prototype better than low-energy sadness or anger.
+VAD_Estimate: [V: -0.65, A: +0.60, D: -0.45]
+EMOTION: afraid",[-0.65  0.6  -0.45],0.8784645695758025,True,False
+"I left my phone on the bus last night as I was coming home, I am still very upset,",sad,"Customer :I tried calling them this morning and they said they would check their lost and found. I have not heard anything from them yet.
+Agent :",sad,sad,angry,"REASONING: Losing the phone is unpleasant, and “very upset” signals lingering irritation and frustration with moderate-to-high arousal, not passive sadness or fear. The person feels annoyed about the loss, giving moderate dominance rather than helplessness.
+VAD_Estimate: [V: -0.58, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.58  0.55  0.2 ],0.9776502442080195,True,False
+"When my father went into hospital, after he fell down the stairs, we had no idea he had cancer.",sad,"Customer :It was my father who was sick. He passed not too long ago.
+Agent :",sad,sad,afraid,"REASONING: The situation involves a sudden, unstable health crisis for a family member with no clear cause or control, which triggers worry and anxiety rather than anger or joy. Negative valence, high arousal, and low dominance align with fear.
+VAD_Estimate: [V: -0.55, A: +0.55, D: -0.40]
+EMOTION: afraid",[-0.55  0.55 -0.4 ],0.8268615361715649,True,False
+I dropped my 5 dollar ice cream as soon as I left the store,sad,"Customer :I dropped my 5 dollar ice cream as soon as I left the store
+Agent :",sad,sad,angry,"REASONING: The situation is a minor but annoying loss, producing active frustration rather than deep sadness or fear; the displeasure is clear, arousal is moderately high from irritation, and the speaker retains a sense of assertive annoyance rather than helplessness.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.979642792042079,True,False
+I lost my wallet and had to get all new cards,sad,"Customer :I usually dont have much cash on me but the cards are hard to replace.
+Agent :",sad,sad,angry,"REASONING: Losing a wallet is a negative, inconvenient event that creates irritation and frustration due to the hassle of replacing cards. There is no serious threat or grief, so the closest fit is active annoyance rather than fear or sadness.
+VAD_Estimate: [V: -0.55, A: +0.45, D: -0.10]
+EMOTION: angry",[-0.55  0.45 -0.1 ],0.7600657866263946,True,False
+My favorite cake stand was stolen.,sad,"Customer :That's a shame. Do you know who stole it?
+Agent :",sad,sad,angry,"REASONING: The theft of a favorite item is a negative, unfair event caused by someone else, prompting irritation and frustration rather than helplessness or fear. This aligns with high displeasure, moderately high arousal, and assertive blame.
+
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.25]
+EMOTION: angry",[-0.55  0.55  0.25],1.0075713374247999,True,False
+My little boy is starting Kindergarten in a few days,sad,"Customer :I'm kind of sad my little boy is growing up so fast and starting Kindergarten next week.
+Agent :",sad,sad,joyful,"REASONING: This is a positive developmental milestone for the speaker's child, evoking warmth, pride, and pleasant anticipation rather than fear or sadness. Valence is clearly positive, arousal is moderately elevated, and the speaker feels a sense of joy and empowerment.
+VAD_Estimate: [V: +0.70, A: +0.45, D: +0.35]
+EMOTION: joyful",[0.7  0.45 0.35],1.658221939307281,True,False
+My little boy is starting Kindergarten in a few days,sad,"Customer :Yes and I'll get a break during the day also!
+Agent :",sad,sad,joyful,"REASONING: The situation describes a positive family milestone—a child beginning kindergarten—which typically evokes pride, warmth, and happiness rather than threat, loss, or irritation. Valence is clearly positive, arousal is moderately elevated due to anticipation, and dominance reflects a sense of empowerment and warmth.
+
+VAD_Estimate: [V: +0.70, A: +0.45, D: +0.35]
+EMOTION: joyful",[0.7  0.45 0.35],1.658221939307281,True,False
+My favorite cake stand was stolen.,sad,"Customer :Did they take anything else?
+Agent :",sad,sad,angry,"REASONING: The theft of a valued possession is a negative, frustrating event caused by someone else, leading to irritation and a sense of blame rather than helplessness. This fits anger with moderate-high arousal and assertive control.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.25]
+EMOTION: angry",[-0.55  0.55  0.25],1.0075713374247999,True,False
+when my bird cage didnt come in the mail today like it was supposed to,sad,"Customer :Have you asked the merchant why it is late?
+Agent :",sad,sad,angry,"REASONING: The mail not arriving as expected causes frustration and active irritation, not helplessness or grief. There is no threatening ambiguity, so fear is not appropriate; the energy is too high for sadness.
+VAD_Estimate: [V: -0.45, A: +0.40, D: +0.10]
+EMOTION: angry",[-0.45  0.4   0.1 ],0.8162107570964745,True,False
+I am having a hard time with someone who keeps repeating the same mistakes. It's hard to see they keep going back to the same path.,sad,"Customer :I hope you can provide them with some help.
+Agent :",sad,sad,angry,"REASONING: The speaker expresses frustration and irritation toward another person’s repeated behavior, which is a negative interpersonal experience with moderate arousal and a slight sense of assertive annoyance rather than helplessness.
+VAD_Estimate: [V: -0.55, A: +0.45, D: +0.10]
+EMOTION: angry",[-0.55  0.45  0.1 ],0.842436941260294,True,False
+"Don't you hate it when you're feeling confident in a new hairstyle or some clothes you're wearing, and then someone makes fun of you? Had that happen the other day. Makes you want to be able to hide in the background and never try anything new again",sad,"Customer :It was actually a stranger, and I was on public transportation. They didn't actually say anything to me, I could just tell the way they were giving me a look, and kind of shaking their head and then laughing to themselves, that it was pointed at me. Maybe I read too much into it. Either way, made me want to sink into the ground
+Agent :",sad,sad,afraid,"REASONING: Being mocked after feeling confident is highly unpleasant and creates a vulnerable, anxious state; wanting to hide and avoid future attempts signals low dominance and withdrawal rather than assertive anger.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.45]
+EMOTION: afraid",[-0.65  0.55 -0.45],0.8289752710425082,True,False
+I miss being a kid. I hate all the responsibility I have now,sad,"Customer :yes just playing outside all the time, no smartphones no snapchat
+Agent :",sad,sad,angry,"REASONING: The speaker expresses active frustration and irritation toward their current responsibilities, which is a blaming/assertive negative reaction rather than helpless sadness. The nostalgic longing for childhood is secondary to the explicit “hate” toward the present situation.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.979642792042079,True,False
+I dropped a bowl of mashed potatoes and it smashed all over the floor,sad,"Customer :I dropped a bowl of mashed potatoes and it smashed all over the floor
+Agent :",sad,sad,angry,"REASONING: The situation is unpleasant but not a threat; the mess causes frustration and irritation, with moderate arousal and a sense of being in slight control (it was an accident, but not an external threat). This aligns with annoyance/anger rather than fear or sadness.  
+VAD_Estimate: [V: -0.45, A: +0.40, D: +0.20]  
+EMOTION: angry",[-0.45  0.4   0.2 ],0.8730406634286859,True,False
+I feel bad I don't always get to go through bad things and full get healed. I have someone who was around me during the worst times of my life who took that away from me and made the focus be on them..which disrupted my process of grief and healing/,sad,"Customer :Do you mean you feel bad that you don't get to go through bad things or that you don't get to be healed?
+Agent :",sad,sad,angry,"REASONING: The speaker is blaming a specific person for disrupting their grief and healing, showing frustration, resentment, and complaint rather than passive sadness. Valence is negative, arousal is moderately high due to irritation, and dominance is slightly assertive through blame.
+VAD_Estimate: [V: -0.58, A: +0.52, D: +0.18]
+EMOTION: angry",[-0.58  0.52  0.18],0.9416474924301557,True,False
+my brother is in the hospital really sick,sad,"Customer :I am so sorry... What happened?
+Agent :",sad,sad,afraid,"REASONING: The situation involves a loved one being seriously ill in the hospital, which creates strong negative feelings, heightened anxious arousal, and a sense of helplessness because there is no clear agent to blame and the outcome feels uncertain. This aligns more with fear/worry than with sadness or anger.
+VAD_Estimate: [V: -0.68, A: +0.55, D: -0.45]
+EMOTION: afraid",[-0.68  0.55 -0.45],0.8302409288875128,True,False
+"My daughter lost her last baby tooth today, she's growing up.",sad,"Customer :I know they have to grow up and all but can't they stay littles for a little bit longer?
+Agent :",sad,sad,joyful,"REASONING: The situation is a positive developmental milestone; the parent likely feels pride, warmth, and happiness seeing their daughter grow, despite possible mild nostalgia. Valence is clearly positive, arousal is moderate, and dominance reflects a sense of meaningful connection and gentle empowerment.
+
+VAD_Estimate: [V: +0.65, A: +0.35, D: +0.30]
+
+EMOTION: joyful",[0.65 0.35 0.3 ],1.5555384919699031,True,False
+My dog pooped on the rug today. I was so distraught.,sad,"Customer :Oh that's so aggravating, my dog still has accidents but not many
+Agent :",sad,sad,afraid,"REASONING: The speaker explicitly says “distraught,” which is a highly aroused, unpleasant, and vulnerable emotional state—more aligned with fear/anxiety than with anger or low-energy sadness.  
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.45]  
+EMOTION: afraid",[-0.65  0.55 -0.45],0.8289752710425082,True,False
+I can never figure out why my wife is so grumpy.,sad,"Customer :She's in her late 40s.
+Agent :",sad,sad,angry,"REASONING: The speaker expresses frustration and irritation about a negative interpersonal situation, with a clear focus on the wife’s grumpy behavior. This is active complaining rather than helpless fear or passive sadness, so it aligns most closely with anger.
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.10]
+EMOTION: angry",[-0.55  0.5   0.1 ],0.8855506761332183,True,False
+I am having a hard time with someone who keeps repeating the same mistakes. It's hard to see they keep going back to the same path.,sad,"Customer :I am having a hard time with someone who keeps repeating the same mistakes.
+Agent :",sad,sad,angry,"REASONING: The speaker expresses frustration and irritation toward another person who keeps repeating mistakes, indicating active displeasure and a sense of being fed up. This is a blame-oriented, high-arousal negative reaction rather than sadness or fear.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.25]
+EMOTION: angry",[-0.55  0.55  0.25],1.0075713374247999,True,False
+I lost my cell phone today. I can't believe it,sad,"Customer :oh no. did you try to retrace your steps to find it?
+Agent :",sad,sad,angry,"REASONING: Losing the phone is a clearly unpleasant event, and the exclamation ""I can't believe it"" signals irritation and frustration with high arousal rather than sadness or fear. The reaction is active annoyance, which fits anger more than dejection.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.979642792042079,True,False
+I miss being a kid. I hate all the responsibility I have now,sad,"Customer :I want to be a kid again
+Agent :",sad,sad,angry,"REASONING: The speaker expresses active frustration and irritation about current responsibilities, with the explicit word “hate” signaling anger rather than passive sadness. The negative tone is paired with moderate arousal and a somewhat assertive sense of resentment.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.979642792042079,True,False
+My dog is missing. We have been looking for her for almost a week. He is a three year old rescue dog that we have only had for a few months.,sad,"Customer :Oh my god! Have you posted everywhere and checked shelters?
+Agent :",sad,sad,afraid,"REASONING: The situation is highly negative because a beloved pet is missing. There is no clear person to blame, the outcome is uncertain and uncontrollable, and the ongoing search creates anxious vigilance and worry rather than calm sadness.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.40]
+EMOTION: afraid",[-0.65  0.55 -0.4 ],0.8232253640407347,True,False
+My little boy is starting Kindergarten in a few days,sad,"Customer :Yes they are growing up fast!
+Agent :",sad,sad,joyful,"REASONING: The upcoming milestone of a child starting Kindergarten is a positive, proud moment for the parent, with moderate excitement and a sense of personal significance. This aligns with pleasant, active, and empowered feelings rather than fear or sadness.  
+VAD_Estimate: [V: +0.65, A: +0.45, D: +0.35]  
+EMOTION: joyful",[0.65 0.45 0.35],1.6183942659315127,True,False
+i was upset when i couldnt get the day off,sad,"Customer :Did you talk to your boss?
+Agent :",sad,sad,angry,"REASONING: The speaker explicitly says “upset,” signaling clear displeasure at being denied the day off. The situation involves frustration with an external restriction, with moderate arousal and a hint of irritation rather than helplessness or fear, so it aligns most closely with anger.
+
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.979642792042079,True,False
+All of the good shows are ending. It really ruins tv for me.,sad,"Customer :Every good show on tv is ending or has already ended.
+Agent :",sad,sad,angry,"REASONING: The ending of good shows is disappointing and frustrating, expressed through active irritation (“ruins tv for me”) rather than passive grief. This points to negative valence, moderate-high arousal, and a somewhat assertive complaining tone.
+
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.20]
+EMOTION: angry",[-0.55  0.5   0.2 ],0.9381897462667134,True,False
+My cat ignores me until she wants food from me,sad,"Customer :How long have you had your cat? Mine used to be like that.
+Agent :",sad,sad,angry,"REASONING: The speaker is expressing mild frustration/annoyance at being treated as a food source rather than receiving affection, which is a negative experience with moderate irritation and assertive complaining rather than sadness or fear.
+VAD_Estimate: [V: -0.50, A: +0.45, D: +0.20]
+EMOTION: angry",[-0.5   0.45  0.2 ],0.9034378783292186,True,False
+I was sad at how mad I got at my mom when she threw my vitamins away,sad,"Customer :No. I am poor so it's a big deal. However she did it absent minded-ly as they were in a big package. Still- I shouldn't have gotten so mad
+Agent :",sad,sad,angry,"REASONING: The speaker explicitly describes getting “mad” at their mom in the moment, which indicates anger and irritation toward a specific person. The word “sad” reflects regret about that reaction, but the in-the-event emotion is anger.
+VAD_Estimate: [V: -0.55, A: +0.60, D: +0.30]
+EMOTION: angry",[-0.55  0.6   0.3 ],1.0771258050942796,True,False
+"My dog passed away this morning. He was 13 years old, a golden lab. I'm just happy he's not in pain anymore.",sad,"Customer :My 13 year old golden lab passed away this morning. I miss him so much, but I'm glad he is not in pain anymore.
+Agent :",sad,sad,joyful,"REASONING: Although the situation involves loss, the speaker explicitly says they are “happy” that their dog is no longer in pain, signaling relief and positive acceptance rather than grief. This explicit emotion word determines the final label; VAD reflects moderately positive valence, mild positive arousal, and a sense of peaceful control.
+VAD_Estimate: [V: +0.60, A: +0.25, D: +0.35]
+EMOTION: joyful",[0.6  0.25 0.35],1.4985659811966905,True,False
+"Harvey weinstein was such a good studio , they just ruined their business and now there arent any good movies",sad,"Customer :harvey weinstein made such great movies until he ruined it
+Agent :",sad,sad,angry,"REASONING: The speaker expresses frustration and irritation about the decline of movies and blames the studio/business for ruining things. There is clear negative valence, active complaining energy, and an assertive sense of blame rather than helplessness or sadness.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.30]
+EMOTION: angry",[-0.55  0.55  0.3 ],1.037159582706538,True,False
+I was upset when the spurs traded away Khawi Leonard,sad,"Customer :yea, they should have forced him to play a little to see what would happen.  maybe he would change his mind
+Agent :",sad,sad,angry,"REASONING: The trade of Kawhi Leonard by the Spurs is a negative event that triggers frustration and irritation toward the team’s decision, with active displeasure and a sense of blaming the organization. This fits anger more than sadness because the reaction is energized and directed at a specific cause.
+
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.979642792042079,True,False
+"My daughter lost her last baby tooth today, she's growing up.",sad,"Customer :I was just talking about this with my friend. They are getting too old
+Agent :",sad,sad,joyful,"REASONING: Losing a last baby tooth is a normal, positive milestone that evokes tender pride and warm appreciation rather than distress; valence is positive, arousal is calm to mildly positive, and dominance reflects a grounded, reflective sense of connection.
+VAD_Estimate: [V: +0.60, A: +0.20, D: +0.30]
+EMOTION: joyful",[0.6 0.2 0.3],1.4596917482811225,True,False
+I am having a hard time with someone who keeps repeating the same mistakes. It's hard to see they keep going back to the same path.,sad,"Customer :Bad behaviors and attitudes. It's hard to see they keep going back to the same path.
+Agent :",sad,sad,angry,"REASONING: The speaker is expressing frustration with a specific person’s repeated behavior, which is an active irritation rather than helpless fear or passive sadness. This points toward moderate-to-high negative arousal and assertive displeasure.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.979642792042079,True,False
+I lost my cell phone today. I can't believe it,sad,"Customer :I probably will have to pay but I think they will replace the phone
+Agent :",sad,sad,angry,"REASONING: The event is negative and frustrating, with an energetic, irritated tone (“I can’t believe it”) suggesting active displeasure rather than passive sadness. This points to high negative valence, moderate-high arousal, and some assertive frustration.
+VAD_Estimate: [V: -0.60, A: +0.60, D: +0.20]
+EMOTION: angry",[-0.6  0.6  0.2],1.0191663259743229,True,False
+"My two dogs got into a fight with each other, and now they're avoiding one another. They even drew blood on each other during the fight. They're usually good buddies, so it kind of bothers me that they did that.",sad,"Customer :Not quite. They're not aggressive with one another, but they still haven't completely gotten back to the point where they're acting normal. I guess it's just a matter of time. They've been together four years, and that was the worst fight yet.
+Agent :",sad,sad,angry,"REASONING: The situation is unpleasant and frustrating, with the speaker actively bothered by the dogs’ fighting and the resulting tension. This is moderate-to-high arousal irritation rather than passive sadness or fear, with a slight sense of assertive frustration.
+VAD_Estimate: [V: -0.50, A: +0.45, D: +0.20]
+EMOTION: angry",[-0.5   0.45  0.2 ],0.9034378783292186,True,False
+I lost my cell phone today. I can't believe it,sad,"Customer :I lost my cell phone today
+Agent :",sad,sad,angry,"REASONING: Losing a phone is a negative, frustrating event. The phrase “I can’t believe it” signals active irritation and disbelief rather than helpless fear or passive sadness, so valence is negative, arousal is elevated, and the reaction is more assertive/complaining than vulnerable.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.15]
+EMOTION: angry",[-0.55  0.55  0.15],0.9535197952848173,True,False
+I broke my laptop screen.,sad,"Customer :I agree, its still functional so I probably shouldn't be too sad.
+Agent :",sad,sad,angry,"REASONING: The broken laptop is a negative, frustrating event with no threat or helplessness, so it is not fear or sadness. The irritation and self-directed frustration suggest moderate arousal and some assertiveness, aligning with anger.
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.20]
+EMOTION: angry",[-0.55  0.5   0.2 ],0.9381897462667134,True,False
+My grandfather passed from medical malpractice a year ago.,sad,"Customer :Oh wow, that is so sad. Have you contacted an attorney?
+Agent :",sad,sad,angry,"REASONING: The attribution to ""medical malpractice"" identifies a specific blameworthy entity, implying frustration and anger rather than passive grief. Negative valence, heightened arousal, and assertive control point to anger.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.25]
+EMOTION: angry",[-0.55  0.55  0.25],1.0075713374247999,True,False
+"When people buy assorted doughnuts, and somebody eats the only flavor you like.",sad,"Customer :Yes, I'm a picky eater.
+Agent :",sad,sad,angry,"REASONING: Someone else’s action caused the irritation, triggering frustration and annoyance rather than sadness or fear; arousal is moderately high with some assertive blame toward the other person.
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.20]
+EMOTION: angry",[-0.55  0.5   0.2 ],0.9381897462667134,True,False
+my brother is in the hospital really sick,sad,"Customer :Is he ok now?
+Agent :",sad,sad,afraid,"REASONING: A serious illness in the hospital is highly unpleasant and creates anxious worry about a loved one’s safety, with high arousal but low control over the outcome.
+
+VAD_Estimate: [V: -0.70, A: +0.55, D: -0.45]
+EMOTION: afraid",[-0.7   0.55 -0.45],0.83168503653727,True,False
+My girlfriend left me for my best friend,sad,"Customer :My girlfriend broke up with me and now is in a relationship with my best friend
+Agent :",sad,sad,angry,"REASONING: The event is a clear interpersonal betrayal with specific people to blame, which typically triggers frustration and irritation rather than helplessness or passive grief. This yields negative valence, moderately high arousal, and a sense of assertive blame.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.979642792042079,True,False
+I lost my cell phone today. I can't believe it,sad,"Customer :oh that stinks. did you have phone insurance at least?
+Agent :",sad,sad,angry,"REASONING: The event is negative and personally frustrating, with an active, irritated tone (“I can’t believe it”) rather than passive sadness. This fits high displeasure, moderate-to-high arousal, and some assertive frustration.
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.20]
+EMOTION: angry",[-0.55  0.5   0.2 ],0.9381897462667134,True,False
+My car stop working last week. I took it to the mechanic. It need a lot of money to fix it.,sad,"Customer :My car stop working last week. I took it to the mechanic. It need a lot of money to fix it.
+Agent :",sad,sad,angry,"REASONING: The car breakdown and expensive repair is a negative, frustrating event. The speaker is actively complaining about the cost, showing irritation rather than helplessness or sadness, which points to high displeasure, moderate-high arousal, and assertive frustration.
+
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+
+EMOTION: angry",[-0.55  0.55  0.2 ],0.979642792042079,True,False
+My dog ran away today. I was so distraught.,sad,"Customer :I have! I put up signs all over the neighborhood. I do hope somebody returns her soon.
+Agent :",sad,sad,afraid,"REASONING: The explicit emotion word ""distraught"" signals intense distress and upset, with strongly negative feelings, high agitation, and a sense of helplessness about a situation the speaker cannot control. This aligns most closely with fear-like vulnerability rather than sadness’s low energy or anger’s assertive blame.
+VAD_Estimate: [V: -0.70, A: +0.60, D: -0.45]
+EMOTION: afraid",[-0.7   0.6  -0.45],0.8810221336606703,True,False
+My cat got ran over by someone. He sped off like it didn't matter.,sad,"Customer :So sad right now, my poor cat.
+Agent :",sad,sad,angry,"REASONING: The speaker is describing a harm done to their cat by a specific person who fled without concern, which triggers blame, frustration, and irritation more than helpless grief. This is a negative event with high arousal and assertive control, matching the anger prototype.
+VAD_Estimate: [V: -0.55, A: +0.60, D: +0.25]
+EMOTION: angry",[-0.55  0.6   0.25],1.048665819029113,True,False
+My cat ignores me until she wants food from me,sad,"Customer :My cat ignores me until she wants food from me
+Agent :",sad,sad,angry,"REASONING: No explicit emotion word is present; this is a mild complaint about the cat’s self-serving behavior, suggesting active irritation/frustration rather than sadness, fear, or joy. Negative valence, moderate arousal from annoyance, and a slight sense of assertive blame toward the cat place it closest to anger.
+VAD_Estimate: [V: -0.45, A: +0.45, D: +0.15]
+EMOTION: angry",[-0.45  0.45  0.15],0.8838551917593741,True,False
+i knew i shouldnt have trusted my brother with my dog,sad,"Customer :Oh no, what happened?
+Agent :",sad,sad,angry,"REASONING: The speaker blames a specific person—their brother—for a preventable outcome, reflecting frustration, betrayal, and irritation rather than helplessness or sadness. This points toward moderately high arousal and assertive blame, consistent with anger.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.979642792042079,True,False
+"When people buy assorted doughnuts, and somebody eats the only flavor you like.",sad,"Customer :It's tough being picky.
+Agent :",sad,sad,angry,"REASONING: The situation describes a frustrating, preventable annoyance caused by someone else’s action, which triggers irritation rather than fear or sadness. There is active displeasure and mild assertive frustration, fitting anger.
+VAD_Estimate: [V: -0.55, A: +0.45, D: +0.20]
+EMOTION: angry",[-0.55  0.45  0.2 ],0.8976079322287654,True,False
+My favorite cake stand was stolen.,sad,"Customer :Yes, it was a moving company we hired, but I didn't have a way to prove it.
+Agent :",sad,sad,angry,"REASONING: The theft of a valued possession is a negative, aggravating event caused by a specific wrongdoer, which creates irritation and frustration rather than helplessness or passive grief. This aligns with high displeasure, high arousal, and a moderate sense of assertiveness/control.
+VAD_Estimate: [V: -0.55, A: +0.60, D: +0.25]
+EMOTION: angry",[-0.55  0.6   0.25],1.048665819029113,True,False
+My dog ran away today and I cant find her.,sad,"Customer :My dog ran away today. What kind of pet did you have as a kid?
+Agent :",sad,sad,afraid,"REASONING: The situation is clearly negative due to the loss and uncertainty about the dog's safety. It involves urgent worry and helplessness, with no one to blame, so high-arousal vulnerable fear fits better than low-energy sadness or anger.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.45]
+EMOTION: afraid",[-0.65  0.55 -0.45],0.8289752710425082,True,False
+"When my father went into hospital, after he fell down the stairs, we had no idea he had cancer.",sad,"Customer :It was terminal, and the doctor said they caught it too late.
+Agent :",sad,sad,afraid,"REASONING: The situation involves a frightening, uncertain event—a father being hospitalized after a fall—while the speaker is unaware of an underlying cancer diagnosis. This creates high distress and helplessness, with little sense of control over the outcome, rather than anger, sadness, or joy.
+
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.45]
+EMOTION: afraid",[-0.65  0.55 -0.45],0.8289752710425082,True,False
+i was upset when i couldnt get the day off,sad,"Customer :yea, didnt matter.
+Agent :",sad,sad,angry,"REASONING: The explicit word “upset” signals clear negative affect. The trigger is a blocked goal (being denied the day off), which leads to active frustration and irritation rather than fear or passive sadness; this fits moderate-high arousal and some assertive control, though constrained by external denial.
+
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.15]
+
+EMOTION: angry",[-0.55  0.5   0.15],0.9108786966440701,True,False
+"I was upset when I found out my new job does not have paid lunches, I was hoping they would be",sad,"Customer :I was upset when I found out my new job does not have paid lunches, I was hoping they would be
+Agent :",sad,sad,angry,"REASONING: The speaker explicitly says they were “upset,” indicating clear displeasure and frustration over an unmet expectation about their job benefits, which aligns with irritation rather than sadness or fear. The event is negative with moderate-to-high arousal and a mild sense of assertive complaint about the policy.
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.15]
+EMOTION: angry",[-0.55  0.5   0.15],0.9108786966440701,True,False
+"In school, people would always bully me.",sad,"Customer :I do not know, i was always smarter than the rest so i think they did not like me
+Agent :",sad,sad,afraid,"REASONING: Repeated bullying involves intimidation and harassment from others, creating a sense of threat, helplessness, and vulnerability during the events. This is strongly unpleasant, highly arousing due to stress, and low in control/dominance, matching fear rather than anger or sadness.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.45]
+EMOTION: afraid",[-0.65  0.55 -0.45],0.8289752710425082,True,False
+my brother is in the hospital really sick,sad,"Customer :he had pnemonia that got out of hand
+Agent :",sad,sad,afraid,"REASONING: The brother being seriously hospitalized is a negative, uncontrollable situation with no specific person to blame, creating anxious worry and helplessness rather than anger or joy. This maps to high displeasure, moderately high arousal, and low dominance, closest to fear.
+VAD_Estimate: [V: -0.68, A: +0.55, D: -0.45]
+EMOTION: afraid",[-0.68  0.55 -0.45],0.8302409288875128,True,False
+My dog ran away today. I was so distraught.,sad,"Customer :Oh no!  hav you been out looking for her?
+Agent :",sad,sad,afraid,"REASONING: Losing a dog is distressing and uncontrollable, causing high unpleasant arousal and a sense of helplessness rather than anger or calm sadness. The explicit word ""distraught"" signals intense agitation and vulnerability, aligning most closely with fear.
+VAD_Estimate: [V: -0.70, A: +0.55, D: -0.45]
+EMOTION: afraid",[-0.7   0.55 -0.45],0.83168503653727,True,False
+My dog ran away from home!,sad,"Customer :Oh no, when did this happen? Do you think you'll find him?
+Agent :",sad,sad,afraid,"REASONING: The situation is sudden and distressing, with high arousal from panic and worry about the dog’s safety, plus a low sense of control over the outcome. Since there is no one to blame and the response is anxious helplessness rather than grief or anger, it aligns with fear.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.40]
+EMOTION: afraid",[-0.65  0.55 -0.4 ],0.8232253640407347,True,False
+My cat ignores me until she wants food from me,sad,"Customer :A couple years, she's an old cat though, 15 years old
+Agent :",sad,sad,angry,"REASONING: The situation describes an unwanted, mildly frustrating pattern in the cat’s behavior, producing irritation and active annoyance rather than sadness or fear. There is a clear source of frustration (the cat) and a complaining tone, so moderate negative valence, moderate arousal, and slight assertiveness point to anger.
+VAD_Estimate: [V: -0.45, A: +0.35, D: +0.10]
+EMOTION: angry",[-0.45  0.35  0.1 ],0.7756932383358772,True,False
+I ruined my favorite shorts today. i sharted,sad,"Customer :my favorite pair of shorts are ruined, thanks to an overtrusted fart
+Agent :",sad,sad,angry,"REASONING: This is a self-inflicted, embarrassing accident that ruins a valued item, producing frustration and irritation rather than fear or grief. The negative event is sudden and unpleasant, so arousal is elevated, while self-blame gives a mild sense of control rather than helpless vulnerability.
+VAD_Estimate: [V: -0.60, A: +0.60, D: +0.10]
+EMOTION: angry",[-0.6  0.6  0.1],0.9709273917240157,True,False
+"I was upset when I found out my new job does not have paid lunches, I was hoping they would be",sad,"Customer :Paid lunches? like a cafeteria?
+Agent :",sad,sad,angry,"REASONING: The explicit word “upset” signals clear negative displeasure. The cause is a specific unmet expectation about workplace policy, which creates active irritation rather than passive sadness or fear, so it aligns most closely with anger.
+
+VAD_Estimate: [V: -0.55, A: +0.40, D: +0.15]
+EMOTION: angry",[-0.55  0.4   0.15],0.8280700453464067,True,False
+My wife got sick about two weeks ago and it was something serious.,sad,"Customer :She's a lot better now, at least can eat solid foods, before it was only yogurt and soups she could swallow. I was doing her injections twice a day.
+Agent :",sad,sad,afraid,"REASONING: The situation involves a serious illness affecting a loved one, which is highly negative, mentally activating, and leaves the speaker with little control over the outcome, consistent with worry and fear.
+VAD_Estimate: [V: -0.70, A: +0.55, D: -0.40]
+EMOTION: afraid",[-0.7   0.55 -0.4 ],0.8259539938761723,True,False
+"Don't you hate it when you're feeling confident in a new hairstyle or some clothes you're wearing, and then someone makes fun of you? Had that happen the other day. Makes you want to be able to hide in the background and never try anything new again",sad,"Customer :Don't you hate it when you're feeling confident in a new hairstyle or some clothes you're wearing, and then someone makes fun of you? Had that happen the other day. Makes you want to be able to hide in the background and never try anything new again
+Agent :",sad,sad,afraid,"REASONING: Being mocked after feeling confident triggers a socially threatening sense of exposure; the desire to hide and avoid trying new things reflects high negative arousal and low dominance, consistent with fear/embarrassment rather than anger’s assertive control or sadness’s low energy.
+VAD_Estimate: [V: -0.62, A: +0.52, D: -0.42]
+EMOTION: afraid",[-0.62  0.52 -0.42],0.7951729371652434,True,False
+I am having a hard time with someone who keeps repeating the same mistakes. It's hard to see they keep going back to the same path.,sad,"Customer :What are they repeating?
+Agent :",sad,sad,angry,"REASONING: The speaker is irritated and frustrated by another person’s repeated mistakes, with a clear external cause and an active sense of annoyance rather than sadness or fear. This points to moderate negative valence, moderately high arousal, and somewhat assertive control.
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.20]
+EMOTION: angry",[-0.55  0.5   0.2 ],0.9381897462667134,True,False
+my brother is in the hospital really sick,sad,"Customer :my brother was in the hospital really sick
+Agent :",sad,sad,afraid,"REASONING: The situation involves a serious, uncontrollable health threat to a loved one, with no clear agent to blame, triggering worry and helplessness rather than anger. This is strongly negative, high-arousal distress, and low dominance/vulnerability → afraid.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.40]
+EMOTION: afraid",[-0.65  0.55 -0.4 ],0.8232253640407347,True,False
+I woke up to something quite terrible this morning.  My vegetable garden has been ravaged through by some strange animal.,sad,"Customer :oh no, did you catch them?
+Agent :",sad,sad,angry,"REASONING: The event is unpleasant and frustrating because the speaker’s garden was destroyed, causing irritation and annoyance rather than sadness or fear. The negative event likely triggers high arousal and a somewhat assertive, blaming response toward the animal.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.55  0.55  0.2 ],0.979642792042079,True,False
+"When people buy assorted doughnuts, and somebody eats the only flavor you like.",sad,"Customer :You ever have the situation where somebody buys doughnuts for your group, and somebody else eats the last one of the only flavor you like?
+Agent :",sad,sad,angry,"REASONING: The situation is mildly unpleasant and frustrating, caused by someone else eating the desired doughnut flavor, creating irritation and active annoyance rather than sadness or fear. Arousal is moderate and the speaker feels somewhat assertive in their displeasure, aligning most closely with anger.
+VAD_Estimate: [V: -0.50, A: +0.55, D: +0.20]
+EMOTION: angry",[-0.5   0.55  0.2 ],0.9849873095629202,True,False
+My dog ran away today and I cant find her.,sad,"Customer :Yes when I was little.
+Agent :",sad,sad,afraid,"REASONING: The situation is highly negative because a beloved pet is missing, with urgent worry and helplessness while searching. This produces high arousal and low dominance, aligning with fear/anxiety rather than sadness.
+VAD_Estimate: [V: -0.65, A: +0.55, D: -0.45]
+EMOTION: afraid",[-0.65  0.55 -0.45],0.8289752710425082,True,False
+"Harvey weinstein was such a good studio , they just ruined their business and now there arent any good movies",sad,"Customer :too much to name
+Agent :",sad,sad,angry,"REASONING: The speaker is blaming a specific entity for ruining the movie business and depriving audiences of good films, showing active frustration and irritation rather than sadness or fear. This fits high displeasure, moderate-high arousal, and assertive blame.
+VAD_Estimate: [V: -0.55, A: +0.55, D: +0.30]
+EMOTION: angry",[-0.55  0.55  0.3 ],1.037159582706538,True,False
+Recently my refrigerator broke.  I had to throw away all of my food and spend $1400 on a new one.,sad,"Customer :I was so upset the other day. I came home and my refrigerator was broken.
+Agent :",sad,sad,angry,"REASONING: The situation involves a frustrating loss of food and a large unexpected expense, creating clear displeasure and irritation rather than fear or sadness. The speaker can respond by replacing the fridge, which gives a moderate sense of control, consistent with anger.
+VAD_Estimate: [V: -0.55, A: +0.50, D: +0.20]
+EMOTION: angry",[-0.55  0.5   0.2 ],0.9381897462667134,True,False
+I had a rough time in the hospital back in march of last year. I got pretty sick and was stuck in there for a week.,sad,"Customer :So sorry to hear that. What happened? Is it something serious?
+Agent :",sad,sad,afraid,"REASONING: The speaker describes being seriously ill and confined in the hospital, a negative, vulnerable, and largely uncontrollable experience. This suggests moderate-high arousal from distress and low dominance due to helplessness, aligning most closely with fear rather than sadness or anger.
+VAD_Estimate: [V: -0.55, A: +0.45, D: -0.40]
+EMOTION: afraid",[-0.55  0.45 -0.4 ],0.7278049189171505,True,False
+my brother is sick,sad,"Customer :he spent two months in the hospital and is almost a month in to his rehab
+Agent :",sad,sad,afraid,"REASONING: Hearing that a loved one is sick creates negative concern and worry, with moderate-to-high arousal from anxiety and low control over the situation.
+VAD_Estimate: [V: -0.70, A: +0.50, D: -0.45]
+EMOTION: afraid",[-0.7   0.5  -0.45],0.7824321056807421,True,False
