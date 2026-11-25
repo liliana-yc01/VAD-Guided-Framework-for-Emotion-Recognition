@@ -239,7 +239,7 @@ EMOTION: <exactly one label from the list>
 
 Situation: "{situation}"
 """
-return prompt.strip()
+    return prompt.strip()
 
 
 # ---------------------------------------------------------------------
