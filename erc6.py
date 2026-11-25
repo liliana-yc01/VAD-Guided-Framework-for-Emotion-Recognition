@@ -205,7 +205,7 @@ You MUST judge the emotion felt DURING the described event, NOT the speaker's cu
 - SADNESS: usually low energy, passive, grief, longing, resignation, emptiness, or unchangeable melancholy.
 - ANGER: high energy, irritation, frustration, complaining. Even if delivered in a resigned tone, active irritation = ANGER.
 
-**CRITICAL RULE 6: DISGUSTED vs. ANGER – REVULSION TEST**
+**CRITICAL RULE 6: DISGUSTED vs. ANGER (The revulsion Test)**
 - If the event involves **contamination, bad taste, bodily fluids, or visual repulsion**, choose **disgusted** – even if there is also blame.
 - *Example:* “The restaurant served me raw chicken – I was disgusted” → **disgusted** (revulsion is primary).
 - *Example:* “My roommate ate my leftovers without asking” → **anger** (no revulsion, pure irritation).
@@ -252,7 +252,6 @@ EMOTION: joyful
 
 ---
 
-
 Task:
 You are an expert in emotion analysis. Given a situation, you will:
 
@@ -261,13 +260,6 @@ You are an expert in emotion analysis. Given a situation, you will:
 3. If no explicit emotion word is present, reason through the VAD dimensions.
 4. Estimate Valence (V), Arousal (A), and Dominance (D) on a scale from -1.0 to +1.0.
 5. Compare the VAD estimate to the benchmark coordinates and identify the closest emotion.
-
-IMPORTANT:
-- Explicit emotion words in the speaker's original statement always take priority.
-- VAD must never override an explicitly expressed emotion.
-- If no explicit emotion word is present, use VAD-based classification.
-- Do not treat emotion words introduced in your own reasoning as words expressed by the speaker.
-- Follow the Surprise Distinction rule when mapping words such as shocked and amazed.
 
 Format your output EXACTLY like this:
 REASONING: <1-2 sentences>
