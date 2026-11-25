@@ -232,12 +232,6 @@ You are an expert in emotion analysis. Given a situation, you will:
 4. Estimate VAD values on a scale from -1.0 to +1.0.
 5. Compare the VAD estimate to the benchmark coordinates and identify the closest emotion.
 
-IMPORTANT:
-- Explicit emotion words in the speaker's original statement always take priority.
-- VAD must never override an explicitly expressed emotion.
-- If no explicit emotion word is present, use VAD-based classification.
-- Do not treat emotion words introduced in your own reasoning as words expressed by the speaker.
-
 Format your output EXACTLY like this:
 REASONING: <1-2 sentences>
 VAD_Estimate: [V: x.xx, A: x.xx, D: x.xx]
@@ -245,7 +239,7 @@ EMOTION: <exactly one label from the list>
 
 Situation: "{situation}"
 """
-    return prompt.strip()
+return prompt.strip()
 
 
 # ---------------------------------------------------------------------
