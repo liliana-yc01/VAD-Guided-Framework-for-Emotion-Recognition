@@ -205,7 +205,7 @@ You MUST judge the emotion felt DURING the described event, NOT the speaker's cu
 - SADNESS: usually low energy, passive, grief, longing, resignation, emptiness, or unchangeable melancholy.
 - ANGER: high energy, irritation, frustration, complaining. Even if delivered in a resigned tone, active irritation = ANGER.
 
-**CRITICAL RULE 6: DISGUSTED vs. ANGER (The revulsion Test)**
+**CRITICAL RULE 6: DISGUSTED vs. ANGER (The Revulsion Test)**
 - If the event involves **contamination, bad taste, bodily fluids, or visual repulsion**, choose **disgusted** – even if there is also blame.
 - *Example:* “The restaurant served me raw chicken – I was disgusted” → **disgusted** (revulsion is primary).
 - *Example:* “My roommate ate my leftovers without asking” → **anger** (no revulsion, pure irritation).
