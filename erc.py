@@ -1,7 +1,4 @@
 # ==============================================================================
-# PHASE 1: Emotional Data Mapping &
-# PHASE 2: Mathematical Framework Formalization &
-# PHASE 3: Algorithmic Logic Integration
 # FULL EVALUATION PIPELINE: Baseline vs. Theory-Guided
 # ==============================================================================
 import os
@@ -12,7 +9,6 @@ import pandas as pd
 from openai import OpenAI
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from scipy import stats
-from scipy.stats import mannwhitneyu
 from statsmodels.stats.contingency_tables import mcnemar
 from statsmodels.stats.multitest import multipletests
 
@@ -59,13 +55,15 @@ print(df.head())
 # ---------------------------------------------------------------------
 # 3. Clean data & Define Target Emotions
 # ---------------------------------------------------------------------
+df = df.dropna(subset=["emotion", "Situation"]).copy()
+
 # Clean emotion labels
-df["emotion"] = df["emotion"].astype(str).str.strip().str.lower()
+df["emotion"] = df["emotion"].str.strip().str.lower()
 
 # Clean situation text
-df["Situation"] = df["Situation"].astype(str).str.strip()
+df["Situation"] = df["Situation"].str.strip()
 
-# Standardized list of Ekman's basic emotions
+# Standardized list of 4 basic emotions
 target_emotions = ["angry", "afraid", "joyful", "sad"]
 valid_emotions = target_emotions
 
@@ -79,34 +77,35 @@ vad_coords = {
 
 RM_WEIGHTS = (
     0.353, # w_V
-    0.114, # w_A 
+    0.114, # w_A
     0.228 # w_D
 )
 
-def closest_emotion(vad_vector, prototypes, weights=RM_WEIGHTS):
+def weighted_vad_distance(v1, v2, weights=RM_WEIGHTS):
     """
     Calculates weighted Euclidean distance to each prototype:
     d = sqrt( w_V * (ΔV)^2 + w_A * (ΔA)^2 + w_D * (ΔD)^2 )
     
     Returns the key (emotion string) of the nearest prototype.
     """
-    w_v, w_a, w_d = weights
-    best_label = None
-    min_dist = float("inf")
+    v1 = np.asarray(v1, dtype=float)
+    v2 = np.asarray(v2, dtype=float)
+    weights = np.asarray(weights, dtype=float)
 
-    for label, proto_vec in prototypes.items():
-        diff = vad_vector - proto_vec
-        # Weighted Euclidean distance
-        dist = np.sqrt(
-            w_v * (diff[0] ** 2) + 
-            w_a * (diff[1] ** 2) + 
-            w_d * (diff[2] ** 2)
+    return float(
+        np.sqrt(np.sum(weights * (v1 - v2) ** 2))
+    )
+
+
+def closest_emotion(vad, vad_coords, weights=RM_WEIGHTS):
+    distances = {
+        emotion: weighted_vad_distance(
+            vad, prototype, weights
         )
-        if dist < min_dist:
-            min_dist = dist
-            best_label = label
+        for emotion, prototype in vad_coords.items()
+    }
 
-    return best_label
+    return min(distances, key=distances.get)
 
 # Filter dataset to target emotions
 df_fine_clean = df[df["emotion"].isin(target_emotions)][
@@ -146,17 +145,17 @@ def create_baseline_prompt(situation, valid_emotions_list):
     emotion_options = ", ".join(valid_emotions_list)
 
     prompt = f"""
-Classify the emotion expressed in the following situation.
+    Classify the emotion expressed in the following situation.
 
-Choose exactly one emotion label from this list:
-[{emotion_options}]
+    Choose exactly one emotion label from this list:
+    [{emotion_options}]
 
-Situation:
-\"{situation}\"
+    Situation:
+    \"{situation}\"
 
-Return only the emotion label.
-Emotion:
-"""
+    Return only the emotion label.
+    Emotion:
+    """
     return prompt.strip()
 
 
@@ -226,13 +225,21 @@ EMOTION: joyful
 
 Task:
 You are an expert in emotion analysis. Given a situation, you will:
-1. Reason through the VAD dimensions based on the text.
-2. Estimate its Valence (V), Arousal (A), and Dominance (D) on a scale from -1.0 to +1.0.
-3. Compare your estimate to the benchmark coordinates above, output the closest benchmark emotion from this list: [{emotion_options}].
-4. Make sure your final EMOTION label is consistent with your VAD estimate; if there is a conflict, re‑evaluate.
+
+1. Identify whether the speaker explicitly expresses an emotion.
+2. If an explicit emotion word is present, that emotion MUST be the final prediction.
+3. If no explicit emotion word is present, reason through Valence, Arousal, and Dominance.
+4. Estimate VAD values on a scale from -1.0 to +1.0.
+5. Compare the VAD estimate to the benchmark coordinates and identify the closest emotion.
+
+IMPORTANT:
+- Explicit emotion words in the speaker's original statement always take priority.
+- VAD must never override an explicitly expressed emotion.
+- If no explicit emotion word is present, use VAD-based classification.
+- Do not treat emotion words introduced in your own reasoning as words expressed by the speaker.
 
 Format your output EXACTLY like this:
-REASONING: <1-2 sentences of step-by-step VAD evaluation>
+REASONING: <1-2 sentences>
 VAD_Estimate: [V: x.xx, A: x.xx, D: x.xx]
 EMOTION: <exactly one label from the list>
 
@@ -244,31 +251,141 @@ Situation: "{situation}"
 # ---------------------------------------------------------------------
 # 7. DeepSeek Call & Algorithmic VAD Vector Distance Parsing
 # ---------------------------------------------------------------------
-def parse_and_map_vad(raw_output, valid_emotions_list, vad_coords, weights=RM_WEIGHTS):
+
+def detect_explicit_emotion(situation, valid_emotions_list):
+    """
+    Detect explicit emotion words in the speaker's original statement.
+    Returns a target emotion if exactly one emotion category is detected.
+    Returns None if no clear explicit emotion is found.
+    """
+    if not isinstance(situation, str):
+        return None
+
+    emotion_words = {
+        "angry": [
+            "angry", "anger", "mad", "furious", "irritated",
+            "annoyed", "outraged", "frustrated"
+        ],
+        "afraid": [
+            "afraid", "scared", "fearful", "frightened",
+            "terrified", "nervous", "anxious"
+        ],
+        "joyful": [
+            "happy", "joyful", "delighted", "cheerful",
+            "excited", "elated", "glad"
+        ],
+        "sad": [
+            "sad", "unhappy", "sorrowful", "depressed",
+            "heartbroken", "miserable", "lonely"
+        ]
+    }
+
+    text = situation.lower()
+    detected = set()
+
+
+    # Basic negation handling
+    negation_pattern = (
+        r"\b(?:not|never|no longer|wasn't|isn't|aren't|"
+        r"don't|didn't|doesn't|without)\s+$"
+    )
+
+    for emotion, words in emotion_words.items():
+
+        if emotion not in valid_emotions_list:
+            continue
+
+        for word in words:
+            pattern = rf"\b{re.escape(word)}\b"
+
+            for match in re.finditer(pattern, text):
+
+                preceding_text = text[max(0, match.start() - 25):match.start()]
+
+                if re.search(negation_pattern, preceding_text):
+                    continue
+
+                detected.add(emotion)
+                break
+
+    # Only apply lexical priority when one category is unambiguous
+    if len(detected) == 1:
+        return next(iter(detected))
+
+    return None
+
+
+def parse_and_map_vad(
+    raw_output,
+    situation,
+    valid_emotions_list,
+    vad_coords,
+    weights=RM_WEIGHTS
+):
+    """
+    Classification priority:
+
+    1. Explicit emotion words in the original Situation.
+    2. Mathematical VAD classification.
+    3. Invalid output if neither is available.
+    """
+
     if raw_output is None or not isinstance(raw_output, str):
         return "invalid_output"
 
-    # STEP 1: ALWAYS check for the explicit EMOTION tag first (LLM's final decision)
-    emotion_match = re.search(r"EMOTION:\s*([a-zA-Z]+)", raw_output, re.IGNORECASE)
-    if emotion_match:
-        predicted_tag = emotion_match.group(1).lower().strip()
-        if predicted_tag in valid_emotions_list:
-            return predicted_tag  # <-- Trust the LLM's explicit choice!
-
-    # STEP 2: Fallback to VAD math ONLY if the EMOTION tag is missing/broken
-    vad_match = re.search(
-        r"VAD_Estimate:\s*\[V:\s*([+-]?\d*\.?\d+),\s*A:\s*([+-]?\d*\.?\d+),\s*D:\s*([+-]?\d*\.?\d+)\]",
-        raw_output,
-        re.IGNORECASE,
+    # --------------------------------------------------
+    # STEP 1: Explicit emotion words have highest priority
+    # --------------------------------------------------
+    explicit_emotion = detect_explicit_emotion(
+        situation,
+        valid_emotions_list
     )
-    if vad_match:
-        try:
-            est = np.array([float(vad_match.group(1)), float(vad_match.group(2)), float(vad_match.group(3))])
-            predicted = closest_emotion(est, vad_coords, weights=weights)
-            if predicted in valid_emotions_list:
-                return predicted
-        except Exception:
-            pass
+
+    if explicit_emotion is not None:
+        return explicit_emotion
+
+    # --------------------------------------------------
+    # STEP 2: Extract the model's VAD estimate
+    # --------------------------------------------------
+    vad_match = re.search(
+        r"VAD_Estimate:\s*\[V:\s*([+-]?\d*\.?\d+),\s*"
+        r"A:\s*([+-]?\d*\.?\d+),\s*"
+        r"D:\s*([+-]?\d*\.?\d+)\]",
+        raw_output,
+        re.IGNORECASE
+    )
+
+    if not vad_match:
+        return "invalid_output"
+
+    try:
+        estimated_vad = np.array([
+            float(vad_match.group(1)),
+            float(vad_match.group(2)),
+            float(vad_match.group(3))
+        ])
+
+        # Validate VAD values
+        if not np.all(np.isfinite(estimated_vad)):
+            return "invalid_output"
+
+        if np.any(estimated_vad < -1.0) or np.any(estimated_vad > 1.0):
+            return "invalid_output"
+
+        # --------------------------------------------------
+        # STEP 3: Mathematical VAD classification
+        # --------------------------------------------------
+        predicted = closest_emotion(
+            estimated_vad,
+            vad_coords,
+            weights=weights
+        )
+
+        if predicted in valid_emotions_list:
+            return predicted
+
+    except (ValueError, TypeError):
+        return "invalid_output"
 
     return "invalid_output"
 
@@ -291,94 +408,119 @@ def clean_prediction(raw_output, valid_emotions_list):
     return "invalid_output"
 
 
+
 def extract_vad_vector(raw_output):
-    """Return estimated VAD vector as np.array, or None if not found."""
-    if raw_output is None or not isinstance(raw_output, str):
-        return None
-    m = re.search(
-        r"VAD_Estimate:\s*\[V:\s*([+-]?\d*\.?\d+),\s*A:\s*([+-]?\d*\.?\d+),\s*D:\s*([+-]?\d*\.?\d+)\]",
-        raw_output, re.IGNORECASE
-    )
-    if m:
-        try:
-            return np.array([float(m.group(1)), float(m.group(2)), float(m.group(3))])
-        except Exception:
-            pass
-    return None
+    """Extract and validate a VAD vector in the [-1, 1] range."""
 
-def repair_invalid(raw_output, valid_emotions_list):
-    """
-    Ultimate fallback repair for invalid outputs.
-    Scans raw text for explicit emotion words, VAD vector, or common synonyms.
-    """
     if not isinstance(raw_output, str):
-        return "invalid_output"
+        return None
 
-    # 1. Check for explicit EMOTION: tag (some LLM outputs may have it)
-    emotion_match = re.search(r"EMOTION:\s*([a-zA-Z]+)", raw_output, re.IGNORECASE)
-    if emotion_match:
-        tag = emotion_match.group(1).lower().strip()
-        if tag in valid_emotions_list:
-            return tag
-
-    # 2. Check for VAD vector and map it
-    vad_match = re.search(
-        r"\[V:\s*([+-]?\d*\.?\d+),\s*A:\s*([+-]?\d*\.?\d+),\s*D:\s*([+-]?\d*\.?\d+)\]",
-        raw_output, re.IGNORECASE
+    match = re.search(
+        r"VAD_Estimate:\s*\[V:\s*([+-]?\d*\.?\d+),\s*"
+        r"A:\s*([+-]?\d*\.?\d+),\s*"
+        r"D:\s*([+-]?\d*\.?\d+)\]",
+        raw_output,
+        re.IGNORECASE
     )
-    if vad_match:
-        try:
-            est = np.array([float(vad_match.group(1)), float(vad_match.group(2)), float(vad_match.group(3))])
-            predicted = closest_emotion(est, vad_coords, weights=RM_WEIGHTS)
-            if predicted in valid_emotions_list:
-                return predicted
-        except:
-            pass
 
-    # 3. Keyword search for the 4 emotion words anywhere in the text
-    for emo in valid_emotions_list:
-        if re.search(rf'\b{emo}\b', raw_output.lower()):
-            return emo
+    if not match:
+        return None
 
-    # 4. Check for common synonyms
-    synonym_map = {
-        "furious": "angry", "irritated": "angry", "mad": "angry",
-        "scared": "afraid", "terrified": "afraid", "nervous": "afraid",
-        "happy": "joyful", "delighted": "joyful", "excited": "joyful",
-        "depressed": "sad", "disappointed": "sad", "devastated": "sad"
-    }
-    for synonym, emo in synonym_map.items():
-        if re.search(rf'\b{synonym}\b', raw_output.lower()):
-            return emo
+    try:
+        vector = np.array([
+            float(match.group(1)),
+            float(match.group(2)),
+            float(match.group(3))
+        ], dtype=float)
 
-    return "invalid_output"
+        if not np.all(np.isfinite(vector)):
+            return None
 
-def call_deepseek(prompt, valid_emotions_list, is_theory=False, vad_coords_dict=None, max_retries=3, initial_backoff=4):
+        if np.any(vector < -1.0) or np.any(vector > 1.0):
+            return None
+
+        return vector
+
+    except (ValueError, TypeError):
+        return None
+
+
+def repair_invalid(
+    raw_output,
+    situation,
+    valid_emotions_list,
+    vad_coords
+):
+    """
+    Repair theory-guided output using the same classification rules.
+    Does not search the model's reasoning for emotion keywords.
+    """
+
+    return parse_and_map_vad(
+        raw_output,
+        situation,
+        valid_emotions_list,
+        vad_coords
+    )
+
+
+def call_deepseek(
+    prompt,
+    valid_emotions_list,
+    situation=None,
+    is_theory=False,
+    vad_coords_dict=None,
+    max_retries=3,
+    initial_backoff=4
+):
+
     backoff = initial_backoff
+
     for attempt in range(max_retries):
+
         try:
             response = client.chat.completions.create(
-                model=MODEL_NAME, messages=[{"role": "user", "content": prompt}], temperature=0.0
+                model=MODEL_NAME,
+                messages=[
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.0
             )
+
             raw_output = response.choices[0].message.content
-            
+
             if is_theory and vad_coords_dict is not None:
-                prediction = parse_and_map_vad(raw_output, valid_emotions_list,
-                                          vad_coords_dict)
+
+                prediction = parse_and_map_vad(
+                    raw_output,
+                    situation,
+                    valid_emotions_list,
+                    vad_coords_dict
+                )
+
             else:
-                prediction = clean_prediction(raw_output, valid_emotions_list)
-                
-            if prediction == "invalid_output" and raw_output is not None:
-                prediction = repair_invalid(raw_output, valid_emotions_list)
+                prediction = clean_prediction(
+                    raw_output,
+                    valid_emotions_list
+                )
+
+            # No keyword-based repair for baseline or theory outputs
 
             time.sleep(0.5)
+
             return prediction, raw_output
 
         except Exception as e:
-            print(f"\n[API Error - Attempt {attempt + 1}/{max_retries}]", e)
+
+            print(
+                f"\n[API Error - Attempt {attempt + 1}/{max_retries}]",
+                e
+            )
+
             if attempt < max_retries - 1:
                 time.sleep(backoff)
                 backoff *= 2
+
             else:
                 return "api_error", None
 
@@ -411,7 +553,11 @@ for index in range(len(baseline_predictions), len(df_sample)):
     situation = row["Situation"]
     prompt = create_baseline_prompt(situation, valid_emotions)
 
-    prediction, raw_output = call_deepseek(prompt, valid_emotions, is_theory=False)
+    prediction, raw_output = call_deepseek(
+    prompt,
+    valid_emotions,
+    situation=situation,
+    is_theory=False)
 
     baseline_predictions.append(prediction)
     baseline_raw_outputs.append(raw_output)
@@ -458,7 +604,12 @@ for index in range(len(theory_predictions), len(df_sample)):
     prompt = create_theory_guided_prompt(situation, valid_emotions)
 
     # Use the call_deepseek wrapper to enforce proper parsing and retries
-    prediction, raw_output = call_deepseek(prompt, valid_emotions, is_theory=True, vad_coords_dict=vad_coords)
+    prediction, raw_output = call_deepseek(
+    prompt,
+    valid_emotions,
+    situation=situation,
+    is_theory=True,
+    vad_coords_dict=vad_coords)
 
     theory_predictions.append(prediction)
     theory_raw_outputs.append(raw_output)
@@ -467,7 +618,7 @@ for index in range(len(theory_predictions), len(df_sample)):
     print("True label:", row["emotion"])
     print("Prediction:", prediction)
     print("-" * 60)
-    
+
     # Save batch checkpoint to disk
     if (index + 1) % BATCH_SAVE_INTERVAL == 0 or (index + 1) == len(df_sample):
         df_sample.loc[:index, "theory_prediction"] = theory_predictions
@@ -484,23 +635,25 @@ df_sample["theory_estimated_vec"] = df_sample["theory_raw_output"].apply(extract
 
 # Define the function to compute VAD estimation error
 def calculate_true_vad_error(row):
-    """Distance between estimated VAD vector and true emotion’s benchmark coordinates."""
     true_label = row["emotion"]
     est_vec = row["theory_estimated_vec"]
+
     if true_label in vad_coords and isinstance(est_vec, np.ndarray):
-        return float(np.linalg.norm(vad_coords[true_label] - est_vec))
+        true_vec = vad_coords[true_label]
+        return weighted_vad_distance(est_vec, true_vec)
+
     return np.nan
 
 # Compute and print the VAD estimation error
-df_sample["theory_true_vad_error"] = df_sample.apply(calculate_true_vad_error, axis=1)
-print("Mean VAD estimation error to true benchmark:", df_sample["theory_true_vad_error"].mean())
+df_sample["theory_estimation_distance"] = df_sample.apply(calculate_true_vad_error, axis=1)
+print("Mean VAD estimation error to true benchmark:", df_sample["theory_estimation_distance"].mean())
 
 
 # ---------------------------------------------------------------------
 # 10. Evaluate Baseline Prompt
 # ---------------------------------------------------------------------
 print("\n" + "=" * 70)
-print("BASELINE PROMPT RESULTS (EKMAN 6)")
+print("BASELINE PROMPT RESULTS")
 print("=" * 70)
 
 baseline_accuracy = accuracy_score(
@@ -609,8 +762,6 @@ print("Cases where both prompts were wrong:", len(both_wrong_cases))
 # ---------------------------------------------------------------------
 # 13. Advanced Metric Upgrade: 3D Macro Binning & Continuous VAD Vector Distance
 # ---------------------------------------------------------------------
-
-
 def macro_map_vad(v, a, d):
     """
     Maps continuous VAD values [-1.0, 1.0] to qualitative macro categories.
@@ -671,10 +822,13 @@ theory_macro_3d_accuracy = accuracy_score(
 def calculate_vad_error(row, pred_col):
     true_label = row["emotion"]
     pred_label = row[pred_col]
-    if pred_label in ["invalid_output", "api_error"] or pd.isna(pred_label):
-        return np.nan  
+
     if true_label in vad_coords and pred_label in vad_coords:
-        return float(np.linalg.norm(vad_coords[true_label] - vad_coords[pred_label]))
+        true_vec = vad_coords[true_label]
+        pred_vec = vad_coords[pred_label]
+
+        return weighted_vad_distance(true_vec, pred_vec)
+
     return np.nan
 
 
@@ -829,11 +983,11 @@ for target in target_emotions:
     mask = df_sample["emotion"] == target
     b_c = df_sample.loc[mask, "baseline_correct"]
     t_c = df_sample.loc[mask, "theory_correct"]
-    
+
     table_class = np.zeros((2,2), dtype=int)
     for b, t in zip(b_c, t_c):
         table_class[int(b), int(t)] += 1
-        
+
     res = mcnemar(table_class, exact=True)
     raw_p_values.append(res.pvalue)
     targets_tested.append(target)
@@ -853,19 +1007,6 @@ for i, target in enumerate(targets_tested):
     else:
         print("No statistically significant change after FDR correction.")
     print("")
-    
-    
-#  Mann‑Whitney U
-# ---------------------------------------------------------------------    
-    
-baseline_err_misses = df_sample.loc[df_sample["baseline_correct"]==False, "baseline_vad_error"].dropna()
-theory_err_misses = df_sample.loc[df_sample["theory_correct"]==False, "theory_vad_error"].dropna()
-
-u_stat, mw_p = mannwhitneyu(baseline_err_misses, theory_err_misses, alternative='two-sided')
-print("\nMann-Whitney U on VAD error for incorrect predictions only:")
-print(f"Baseline median error (misses): {baseline_err_misses.median():.4f}")
-print(f"Theory median error (misses): {theory_err_misses.median():.4f}")
-print(f"U = {u_stat:.1f}, p = {mw_p:.4f}")
 
 
 # ---------------------------------------------------------------------
@@ -875,7 +1016,7 @@ print(f"U = {u_stat:.1f}, p = {mw_p:.4f}")
 diff = (
     df_sample["baseline_vad_error"] -
     df_sample["theory_vad_error"]
-).dropna()   # <-- drop NaN so paired test runs on valid rows only
+).dropna()   # drop NaN so paired test runs on valid rows only
 
 t_stat, p_val = stats.ttest_1samp(diff, 0)
 
@@ -894,12 +1035,6 @@ ci = stats.t.interval(
 
 print(f"95% CI = [{ci[0]:.4f}, {ci[1]:.4f}]")
 
-# Wilcoxon signed-rank
-w = stats.wilcoxon(diff)
-
-print(f"Wilcoxon W = {w.statistic:.1f}")
-print(f"Wilcoxon p = {w.pvalue:.4f}")
-
 print("\n" + "=" * 70)
 print("BOOTSTRAP CONFIDENCE INTERVALS (Accuracy Difference)")
 print("=" * 70)
@@ -908,12 +1043,13 @@ n_iterations = 1000
 n_size = len(df_sample)
 diffs = []
 
+rng = np.random.default_rng(42)
 for i in range(n_iterations):
-    indices = np.random.choice(n_size, size=n_size, replace=True)
+    indices = rng.choice(n_size, size=n_size, replace=True)
     y_true_boot = df_sample["emotion"].iloc[indices]
     y_base_boot = df_sample["baseline_prediction"].iloc[indices]
     y_theo_boot = df_sample["theory_prediction"].iloc[indices]
-    
+
     base_acc = accuracy_score(y_true_boot, y_base_boot)
     theo_acc = accuracy_score(y_true_boot, y_theo_boot)
     diffs.append(theo_acc - base_acc)
@@ -930,7 +1066,7 @@ elif upper_bound < 0:
     print("Conclusion: Baseline prompt is SIGNIFICANTLY BETTER at 95% confidence.")
 else:
     print("Conclusion: No significant difference in overall accuracy (0 is within CI).")
-    
+
 # ---------------------------------------------------------------------
 # 14. Save Outputs
 # ---------------------------------------------------------------------
@@ -964,4 +1100,4 @@ print("- theory_helped_cases.csv")
 print("- theory_hurt_cases.csv")
 print("- both_wrong_cases.csv")
 
-print("\nPipeline complete.") 
+print("\nPipeline complete.")
